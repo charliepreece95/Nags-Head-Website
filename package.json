@@ -1,0 +1,35 @@
+{
+  "name": "nags_head_website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp",
+    "serve": "nodemon gulpfile.js"
+  },
+  "author": "Charlie Preece",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect-php": "^1.0.3",
+    "gulp-css": "^0.1.0",
+    "gulp-fontmin": "^0.7.4",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2",
+    "readable-stream": "^3.6.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "browser-sync": "^2.26.5",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.4.0",
+    "nodemon": "^1.19.0",
+    "popper.js": "^1.15.0",
+    "sass": "^1.19.0"
+  }
+}
