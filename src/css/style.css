@@ -57,7 +57,6 @@ header {
 }
 
 .nav-links li {
-    padding: 0 40px;
     list-style: none;
     text-align: center;
 }
@@ -67,6 +66,35 @@ header {
     letter-spacing: 2.5px;
     cursor: pointer;
 }
+
+    /* Top and Bottom borders come in */
+    /* stroke */
+    nav.stroke ul li a,
+    nav.fill ul li a {
+      position: relative;
+    }
+
+    nav.stroke ul li a,
+    nav.fill ul li a {
+      position: relative;
+    }
+    nav.stroke ul li a:after,
+    nav.fill ul li a:after {
+      position: absolute;
+      top: 25px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 0%;
+      content: '.';
+      color: transparent;
+      background: #ffffff;
+      height: 3px;
+    }
+
+    nav.stroke ul li a:hover:after {
+      width: 100%;
+    }
 
 .toggle {
   width: 60px;
@@ -260,26 +288,25 @@ button:hover {
       font-size: 50px; 
     }
   
-    /*position: absolute doesn't seem to work*/
     .nav-links  {
-        position: fixed;
+        position: absolute;
         top: 0;
         right: 0;
-        height: 80vh;
+        height: 75vh;
         top: 15vh;
         width: 45%;
         background-color: #24252A;
         display: flex;
         flex-direction: column;
         align-items: center;
-        transform: translateX(100%);
-        transition: 0.5s ease-in;
-        z-index: 2;
+        z-index: 3;
+        display: none;
     }
 
     .nav-links li  {
-       font-size: 1.5rem;
-        margin: 10% 0;
+       font-size: 2rem;
+        margin: 35% 0;
+        margin-top: 5%;
         opacity: 1;
     }
 
@@ -293,13 +320,15 @@ button:hover {
     }
 
     button {
-        margin: 0 0 7.5% 0;
+        position: relative;
+        left: 22.5%;
+        margin-left: 0;
         padding: 22px 28px;
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     .nav-active {
-        transform: translateX(0%); 
+        transform: translateX(0%);
     }
 
     /* Top and Bottom borders come in */
@@ -352,6 +381,21 @@ button:hover {
       z-index: 2;
       text-align: center;
     }
+  
+  .about-content {
+    position: absolute;
+    top: 1200px;
+    right: 10%;
+    left: 10%;
+  }
+  
+  .flex-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid;
+  }
+  
 }
 
 /*mobile*/
@@ -361,19 +405,31 @@ button:hover {
     font-size: 20px; 
   }
 
+  header {
+    height: 25vh;
+  }
+
   .nav-links {
     top: 24vh;
-    z-index: 2;
+    width: 55%;
+    height: 65vh;
+    z-index: 3;
   }
 
   button {
-    margin: 0 0 7.5% 0;
-    font-size: 16px;
-    padding: 10px 15px;
+    position: relative;
+    left: 25%;
+    margin-left: 0;
+    font-size: 18px;
+    padding: 12px 18px;
   }
 
   .nav-links li {
-    font-size: 16px;
+    font-size: 18px;
+  }
+
+  .nav-links li:nth-child(1) {
+    margin-top: 0;
   }
 
   .active {
@@ -418,7 +474,6 @@ button:hover {
     nav.stroke ul li a:hover:after {
       width: 100%;
     }
-
       
     .slideshow {
       position: relative;
@@ -434,7 +489,6 @@ button:hover {
         height: 100px; 
         position: relative; 
         bottom: 55px;
-        z-index: -1;
         background: #24252A;
         transform: skew(0, -5deg);
     } 
@@ -448,5 +502,71 @@ button:hover {
       font-weight: 800;
       font-size: 1.5rem;
       text-align: center;
+    }
+
+    .article-content {
+      position: absolute;
+      top: -575px;
+      right: 0;
+      width: 52%;
+      height: 200px;
+      text-align: justify;
+      background-color: white;
+      padding: 7.5px 15px 15px 15px;
+      font-size: 7.5px;
+      border-radius: 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: none;
+      /*overflow: scroll;*/
+    }
+    
+    .figure-item-bg {
+      position: relative;
+      bottom: 80px;
+      opacity: 0.15;
+      width: 100%;
+      height: 350px;
+      z-index: -2;
+    }
+    
+    .figure-item {
+      position: absolute;
+      top: -575px;
+      left: -7.5%;
+      border-radius: 10px;
+      height: 200px;
+      width: 55%;
+      display: none;
+    }
+    
+    /* Next & previous buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 870px;
+      right: 70%;
+      width: auto;
+      margin-top: -22px;
+      padding: 10px;
+      color: white;
+      font-weight: bold;
+      font-size: 15px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      background-color: #24252A;
+    }
+    
+    /* Position the "next button" to the right */
+    .next {
+      right: 25%;
+      top: 870px;
+      border-radius: 3px 0 0 3px;
+    }
+    
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
     }
 }

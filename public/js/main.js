@@ -3,9 +3,14 @@ const navSlider = () => {
     const nav = document.querySelector(".nav-links");
     //toggle nav
     toggle.addEventListener("click", () => {
-    nav.classList.toggle("nav-active");
      //toggle animation 
-     toggle.classList.toggle("open");
+     if(toggle.classList.toggle("open")) {
+         nav.style.display = "block";
+         nav.classList.toggle("nav-active");
+     }else{
+        nav.style.display = "none";
+        nav.style.transform = "translateX(0%)";
+     }
     });
 };
 
