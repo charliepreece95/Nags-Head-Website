@@ -160,12 +160,12 @@ button:hover {
 
 .sub-title{
   position: relative;
-  top: 15px;
+  top: 5px;
   color: white;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 800;
-  font-size: 4.5rem;
+  font-size: 65px;
   z-index: 2;
   text-align: center;
 }
@@ -265,7 +265,7 @@ button:hover {
         top: 0;
         right: 0;
         height: 75vh;
-        top: 15vh;
+        top: 10vh;
         width: 45%;
         background-color: #24252A;
         display: flex;
@@ -291,7 +291,7 @@ button:hover {
   
     .nav-links li {
       font-size: 2rem;
-      padding: 80px 80px;
+      padding: 65px 80px;
     }
 
     .toggle {
@@ -307,6 +307,7 @@ button:hover {
         margin: 0 0 7.5% 0;
         padding: 22px 28px;
         font-size: 1.5rem;
+        margin-bottom: 45px;
     }
 
     .nav-active {
@@ -327,7 +328,7 @@ button:hover {
     nav.stroke ul li a:after,
     nav.fill ul li a:after {
       position: absolute;
-      top: 35px;
+      top: 10px;
       left: 0;
       right: 0;
       margin: auto;
@@ -363,6 +364,50 @@ button:hover {
       z-index: 2;
       text-align: center;
     }
+
+    .article-content {
+      top: -20px;
+      width: 52%;
+      height: 550px;
+      padding: 7.5px 15px 15px 15px;
+      font-size: 22px;
+    }
+    
+    .figure-item-bg {
+      bottom: 150px;
+      opacity: 0.15;
+      width: 100%;
+      height: 825px;
+      z-index: -2;
+    }
+    
+    .figure-item {
+      top: -20px;
+      left: -7.5%;
+      border-radius: 10px;
+      height: 550px;
+      width: 55%;
+    }
+    
+    /* Next & previous buttons */
+    .prev, .next {
+      top: 1800px;
+      right: 70%;
+      padding: 25px;
+      font-size: 30px;
+      border-radius: 5px;
+     
+    }
+    /* Position the "next button" to the right */
+    .next {
+      right: 22.5%;
+      top: 1800px;
+    }
+    
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
 }
 
 /*ipad*/
@@ -386,6 +431,51 @@ button a{
 button {
     font-size: 1.5rem;
   }
+  .article-content {
+    position: absolute;
+    top: -50px;
+    width: 52%;
+    height: 400px;
+    padding: 7.5px 15px 15px 15px;
+    font-size: 16px;
+  }
+  
+  .figure-item-bg {
+    bottom: 150px;
+    opacity: 0.15;
+    width: 100%;
+    height: 600px;
+    z-index: -2;
+  }
+  
+  .figure-item {
+    top: -50px;
+    left: -7.5%;
+    border-radius: 10px;
+    height: 400px;
+    width: 55%;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    top: 1600px;
+    right: 70%;
+    padding: 17.5px;
+    font-size: 25px;
+    border-radius: 5px;
+   
+  }
+  /* Position the "next button" to the right */
+  .next {
+    right: 22.5%;
+    top: 1600px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
 }
 
 /*mobile*/
@@ -395,12 +485,16 @@ button {
     font-size: 20px; 
   }
 
+  header {
+    padding: 0 5% 0 5%; 
+  }
+
   .nav-links {
-    top: 24vh;
+    top: 17vh;
     width: 60%;
-    height: 450px;
+    height: 420px;
     z-index: 3;
-    border-radius: ;
+    border-radius: 5px; 
   }
 
   button a{      
@@ -461,14 +555,13 @@ button {
       content: '.';
       color: transparent;
       background: #ffffff;
-      height: 3px;
+      height: 2px;
     }
 
     nav.stroke ul li a:hover:after {
       width: 100%;
     }
 
-      
     .slideshow {
       position: relative;
       display: none;
@@ -501,14 +594,14 @@ button {
 
     .article-content {
       position: absolute;
-      top: -575px;
+      top: -630px;
       right: 0;
       width: 52%;
       height: 200px;
       text-align: justify;
       background-color: white;
       padding: 7.5px 15px 15px 15px;
-      font-size: 7.5px;
+      font-size: 10px;
       border-radius: 10px;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -527,7 +620,7 @@ button {
     
     .figure-item {
       position: absolute;
-      top: -575px;
+      top: -630px;
       left: -7.5%;
       border-radius: 10px;
       height: 200px;
@@ -539,7 +632,7 @@ button {
     .prev, .next {
       cursor: pointer;
       position: absolute;
-      top: 870px;
+      top: 810px;
       right: 70%;
       width: auto;
       margin-top: -22px;
@@ -555,8 +648,8 @@ button {
     
     /* Position the "next button" to the right */
     .next {
-      right: 25%;
-      top: 870px;
+      right: 22.5%;
+      top: 810px;
       border-radius: 3px 0 0 3px;
     }
     
@@ -567,20 +660,12 @@ button {
 }
 /*surface duo*/
 @media (min-width: 540px) and (max-width: 540px)  {
-  .nav-links {
-    height: 82.5vh;
+  .nav-links {top: 16vh;
+    width: 50%;}
+}
+
+@media (min-width: 280px) and (max-width: 280px) {
+  .nav-links li:nth-child(3){
+     padding: 30px 0 30px 0;
   }
 }
-@media (min-width: 376px) and (max-width: 420px)  {
-  .nav-links {
-    height: 67.5vh;
-   }
-  }
-
-/*iphone X*/
-@media (min-width: 375px) and (max-width: 375px)  {
-  .nav-links {
-    height: 55vh;
-    border: 1px solid red;
-    }
-  }

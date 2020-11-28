@@ -1,3 +1,4 @@
+//this causes an issue when toggle is clicked twice it'll display:none when resized
 const navSlider = () => {
     const toggle = document.querySelector(".toggle");
     const nav = document.querySelector(".nav-links");
@@ -6,11 +7,11 @@ const navSlider = () => {
     toggle.addEventListener("click", () => {
      //toggle animation 
      if(toggle.classList.toggle("open")) {
-         nav.style.display = "block";
-     }else{
+         nav.style.display = "flex";
+     }else {
         nav.style.display = "none";
      }
-    });
+  });
 };
 
 navSlider();
