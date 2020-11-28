@@ -60,8 +60,8 @@ header {
     list-style: none;
     text-align: center;
     margin: 0 0 0 100px;
+    font-size: 18px;
 }
-
 
 .nav-links li a {
     transition: all 0.3s ease 0s;
@@ -97,6 +97,24 @@ header {
     nav.stroke ul li a:hover:after {
       width: 100%;
     }
+
+    button {
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      font-size: 18px;
+      margin-left: 100px;
+      letter-spacing: 2.5px;
+      background-color: rgba(0, 136, 169, 1);
+      border-radius: 50px;
+      transition: all 0.3s ease 0s;   
+  }
+  
+  button:hover {
+      background-color: rgba(0, 108, 134, 0.5);
+      color: black;
+  }
 
 .toggle {
   width: 60px;
@@ -153,25 +171,6 @@ header {
     width: 0%;
     left: 50%;
   }
-
-button {
-    border: none;
-    color: white;
-    padding: 10px 15px;
-    margin-left: 100px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    background-color: rgba(0, 136, 169, 1);
-    border-radius: 50px;
-    transition: all 0.3s ease 0s;   
-}
-
-button:hover {
-    background-color: rgba(0, 108, 134, 0.5);
-    color: black;
-}
 
 .slideshow {
   width: 100%;
@@ -287,7 +286,7 @@ button:hover {
         position: absolute;
         top: 0;
         right: 0;
-        height: 75vh;
+        height: 72.5vh;
         top: 15vh;
         width: 45%;
         background-color: #24252A;
@@ -299,11 +298,14 @@ button:hover {
     }
 
     .nav-links li  {
-       font-size: 2rem;
+       font-size: 1.75rem;
         margin: 35% 0;
-        margin-top: 5%;
         opacity: 1;
     }
+
+    .nav-links li:nth-child(1) {
+      margin-top: 40px;
+   }
 
     .toggle {
         display: block;
@@ -315,16 +317,23 @@ button:hover {
     }
 
     button {
-        position: relative;
-        left: 22.5%;
-        margin-left: 0;
-        padding: 22px 28px;
-        font-size: 2rem;
+      position: relative;
+      bottom: 5px;
+      padding: 22px 28px;
+      font-size: 1.75rem;
+      margin-left: 0;
     }
-
+  
+    .wrapper  {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+/*
     .nav-active {
         transform: translateX(0%);
     }
+    */
 
     /* Top and Bottom borders come in */
     /* stroke */
@@ -401,22 +410,28 @@ button:hover {
   }
 
   header {
-    height: 25vh;
+    height: 20vh;
   }
 
   .nav-links {
-    top: 24vh;
+    top: 19vh;
     width: 55%;
-    height: 65vh;
+    height: 72.5vh;
     z-index: 3;
   }
 
   button {
     position: relative;
-    left: 25%;
-    margin-left: 0;
+    bottom: 5px;
     font-size: 18px;
-    padding: 12px 18px;
+    padding: 16px 16px;
+    margin-left: 0;
+  }
+
+  .wrapper  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .nav-links li {
@@ -565,3 +580,23 @@ button:hover {
       background-color: rgba(0,0,0,0.8);
     }
 }
+  /*surface duo*/
+  @media (min-width: 540px) and (max-width: 540px)  {
+    .nav-links {
+      height: 82.5vh;
+    }
+}
+  @media (min-width: 376px) and (max-width: 420px)  {
+    .nav-links {
+      height: 67.5vh;
+     }
+    }
+
+  /*iphone X*/
+  @media (min-width: 375px) and (max-width: 375px)  {
+    .nav-links {
+      height: 55vh;
+      border: 1px solid red;
+      }
+    }
+
