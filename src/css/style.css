@@ -57,10 +57,9 @@ header {
 }
 
 .nav-links li {
+    padding: 0 40px;
     list-style: none;
     text-align: center;
-    margin: 0 0 0 100px;
-    font-size: 18px;
 }
 
 .nav-links li a {
@@ -68,53 +67,6 @@ header {
     letter-spacing: 2.5px;
     cursor: pointer;
 }
-
-    /* Top and Bottom borders come in */
-    /* stroke */
-    nav.stroke ul li a,
-    nav.fill ul li a {
-      position: relative;
-    }
-
-    nav.stroke ul li a,
-    nav.fill ul li a {
-      position: relative;
-    }
-    nav.stroke ul li a:after,
-    nav.fill ul li a:after {
-      position: absolute;
-      top: 25px;
-      left: 0;
-      right: 0;
-      margin: auto;
-      width: 0%;
-      content: '.';
-      color: transparent;
-      background: #ffffff;
-      height: 3px;
-    }
-
-    nav.stroke ul li a:hover:after {
-      width: 100%;
-    }
-
-    button {
-      border: none;
-      color: white;
-      padding: 10px 15px;
-      text-decoration: none;
-      font-size: 18px;
-      margin-left: 100px;
-      letter-spacing: 2.5px;
-      background-color: rgba(0, 136, 169, 1);
-      border-radius: 50px;
-      transition: all 0.3s ease 0s;   
-  }
-  
-  button:hover {
-      background-color: rgba(0, 108, 134, 0.5);
-      color: black;
-  }
 
 .toggle {
   width: 60px;
@@ -172,6 +124,25 @@ header {
     left: 50%;
   }
 
+button {
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    margin-left: 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    background-color: rgba(0, 136, 169, 1);
+    border-radius: 50px;
+    transition: all 0.3s ease 0s;   
+}
+
+button:hover {
+    background-color: rgba(0, 108, 134, 0.5);
+    color: black;
+}
+
 .slideshow {
   width: 100%;
   height: 750px;
@@ -204,6 +175,13 @@ header {
   top: 1200px;
   right: 10%;
   left: 10%;
+}
+
+.flex-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid;
 }
 
 .article-content {
@@ -271,7 +249,6 @@ header {
   background-color: rgba(0,0,0,0.8);
 }
 
-
 /*Tablets*/
 @media (max-width:1024px) {
     body {
@@ -282,30 +259,40 @@ header {
       font-size: 50px; 
     }
   
+    /*position: absolute doesn't seem to work*/
     .nav-links  {
         position: absolute;
         top: 0;
         right: 0;
-        height: 72.5vh;
+        height: 75vh;
         top: 15vh;
         width: 45%;
         background-color: #24252A;
         display: flex;
         flex-direction: column;
         align-items: center;
+        transition: 0.5s ease-in;
         z-index: 3;
         display: none;
     }
 
-    .nav-links li  {
-       font-size: 1.75rem;
-        margin: 35% 0;
-        opacity: 1;
+    button a{      
+      font-size: 2rem;
+      letter-spacing: 2px;
+      padding: 10px 15px;
     }
-
-    .nav-links li:nth-child(1) {
+  
+    .wrapper {
+      display:flex;
+      justify-content:center;
+      align-items:center;
       margin-top: 40px;
-   }
+    }
+  
+    .nav-links li {
+      font-size: 2rem;
+      padding: 80px 80px;
+    }
 
     .toggle {
         display: block;
@@ -317,23 +304,14 @@ header {
     }
 
     button {
-      position: relative;
-      bottom: 5px;
-      padding: 22px 28px;
-      font-size: 1.75rem;
-      margin-left: 0;
+        margin: 0 0 7.5% 0;
+        padding: 22px 28px;
+        font-size: 1.5rem;
     }
-  
-    .wrapper  {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-/*
+
     .nav-active {
-        transform: translateX(0%);
+        transform: translateX(0%); 
     }
-    */
 
     /* Top and Bottom borders come in */
     /* stroke */
@@ -385,21 +363,29 @@ header {
       z-index: 2;
       text-align: center;
     }
-  
-  .about-content {
-    position: absolute;
-    top: 1200px;
-    right: 10%;
-    left: 10%;
+}
+
+/*ipad*/
+@media (min-width:768px) and (max-width:768px) { 
+
+  /*position: absolute doesn't seem to work*/
+  .nav-links  {
+    height: 75vh;
+    top: 15vh;
+}
+
+button a{      
+  font-size: 1.5rem;
+}
+
+.nav-links li {
+  font-size: 1.5rem;
+  padding: 60px 60px;
+}
+
+button {
+    font-size: 1.5rem;
   }
-  
-  .flex-items {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid;
-  }
-  
 }
 
 /*mobile*/
@@ -409,37 +395,34 @@ header {
     font-size: 20px; 
   }
 
-  header {
-    height: 20vh;
+  .nav-links {
+    top: 24vh;
+    width: 60%;
+    height: 450px;
+    z-index: 3;
+    border-radius: ;
   }
 
-  .nav-links {
-    top: 19vh;
-    width: 55%;
-    height: 72.5vh;
-    z-index: 3;
+  button a{      
+    font-size: 16px;
+    letter-spacing: 2px;
+    padding: o;
   }
 
   button {
-    position: relative;
-    bottom: 5px;
-    font-size: 18px;
-    padding: 16px 16px;
-    margin-left: 0;
+    padding: 8px 12px 14px 14px;
   }
 
-  .wrapper  {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .wrapper {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin: 20px;
   }
 
   .nav-links li {
-    font-size: 18px;
-  }
-
-  .nav-links li:nth-child(1) {
-    margin-top: 0;
+    font-size: 16px;
+    padding: 30px 30px;
   }
 
   .active {
@@ -484,6 +467,7 @@ header {
     nav.stroke ul li a:hover:after {
       width: 100%;
     }
+
       
     .slideshow {
       position: relative;
@@ -499,6 +483,7 @@ header {
         height: 100px; 
         position: relative; 
         bottom: 55px;
+        z-index: -1;
         background: #24252A;
         transform: skew(0, -5deg);
     } 
@@ -580,23 +565,22 @@ header {
       background-color: rgba(0,0,0,0.8);
     }
 }
-  /*surface duo*/
-  @media (min-width: 540px) and (max-width: 540px)  {
-    .nav-links {
-      height: 82.5vh;
-    }
+/*surface duo*/
+@media (min-width: 540px) and (max-width: 540px)  {
+  .nav-links {
+    height: 82.5vh;
+  }
 }
-  @media (min-width: 376px) and (max-width: 420px)  {
-    .nav-links {
-      height: 67.5vh;
-     }
-    }
+@media (min-width: 376px) and (max-width: 420px)  {
+  .nav-links {
+    height: 67.5vh;
+   }
+  }
 
-  /*iphone X*/
-  @media (min-width: 375px) and (max-width: 375px)  {
-    .nav-links {
-      height: 55vh;
-      border: 1px solid red;
-      }
+/*iphone X*/
+@media (min-width: 375px) and (max-width: 375px)  {
+  .nav-links {
+    height: 55vh;
+    border: 1px solid red;
     }
-
+  }
