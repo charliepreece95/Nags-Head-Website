@@ -249,7 +249,6 @@ button:hover {
   background-color: rgba(0,0,0,0.8);
 }
 
-
 /*Tablets*/
 @media (max-width:1024px) {
     body {
@@ -262,25 +261,37 @@ button:hover {
   
     /*position: absolute doesn't seem to work*/
     .nav-links  {
-        position: fixed;
+        position: absolute;
         top: 0;
         right: 0;
-        height: 80vh;
+        height: 75vh;
         top: 15vh;
         width: 45%;
         background-color: #24252A;
         display: flex;
         flex-direction: column;
         align-items: center;
-        transform: translateX(100%);
         transition: 0.5s ease-in;
-        z-index: 2;
+        z-index: 3;
+        display: none;
     }
 
-    .nav-links li  {
-       font-size: 1.5rem;
-        margin: 10% 0;
-        opacity: 1;
+    button a{      
+      font-size: 2rem;
+      letter-spacing: 2px;
+      padding: 10px 15px;
+    }
+  
+    .wrapper {
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      margin-top: 40px;
+    }
+  
+    .nav-links li {
+      font-size: 2rem;
+      padding: 80px 80px;
     }
 
     .toggle {
@@ -354,6 +365,29 @@ button:hover {
     }
 }
 
+/*ipad*/
+@media (min-width:768px) and (max-width:768px) { 
+
+  /*position: absolute doesn't seem to work*/
+  .nav-links  {
+    height: 75vh;
+    top: 15vh;
+}
+
+button a{      
+  font-size: 1.5rem;
+}
+
+.nav-links li {
+  font-size: 1.5rem;
+  padding: 60px 60px;
+}
+
+button {
+    font-size: 1.5rem;
+  }
+}
+
 /*mobile*/
 @media (max-width:766px) {
 
@@ -363,17 +397,32 @@ button:hover {
 
   .nav-links {
     top: 24vh;
-    z-index: 2;
+    width: 60%;
+    height: 450px;
+    z-index: 3;
+    border-radius: 5px;
+  }
+
+  button a{      
+    font-size: 16px;
+    letter-spacing: 2px;
+    padding: o;
   }
 
   button {
-    margin: 0 0 7.5% 0;
-    font-size: 16px;
-    padding: 10px 15px;
+    padding: 8px 12px 14px 14px;
+  }
+
+  .wrapper {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin: 20px;
   }
 
   .nav-links li {
     font-size: 16px;
+    padding: 30px 30px;
   }
 
   .active {

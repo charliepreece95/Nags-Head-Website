@@ -2,10 +2,14 @@ const navSlider = () => {
     const toggle = document.querySelector(".toggle");
     const nav = document.querySelector(".nav-links");
     //toggle nav
+    //nav.classList.toggle("nav-active");
     toggle.addEventListener("click", () => {
-    nav.classList.toggle("nav-active");
      //toggle animation 
-     toggle.classList.toggle("open");
+     if(toggle.classList.toggle("open")) {
+         nav.style.display = "block";
+     }else{
+        nav.style.display = "none";
+     }
     });
 };
 
