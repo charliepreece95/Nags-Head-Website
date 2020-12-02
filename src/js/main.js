@@ -1,17 +1,20 @@
-//this causes an issue when toggle is clicked twice it'll display:none when resized
 const navSlider = () => {
     const toggle = document.querySelector(".toggle");
     const nav = document.querySelector(".nav-links");
+  
+    let reportWindowSize = () => {
+        nav.style.display = "flex";
+    }
     //toggle nav
-    //nav.classList.toggle("nav-active");
     toggle.addEventListener("click", () => {
-     //toggle animation 
-     if(toggle.classList.toggle("open")) {
-         nav.style.display = "flex";
-     }else {
-        nav.style.display = "none";
-     }
+      //toggle animation 
+      if(toggle.classList.toggle("open")) {
+          nav.style.display = "flex";
+      }else {
+          nav.style.display = "none";
+      }
   });
+  window.addEventListener("resize", reportWindowSize);
 };
 
 navSlider();
@@ -26,7 +29,7 @@ const slideShow = () => {
     slideIndex++;
     if (slideIndex > slides.length) {slideIndex = 1}    
     slides[slideIndex-1].style.display = "block";  
-    setTimeout(slideShow, 5000); // Change image every 5 seconds
+    setTimeout(slideShow, 8000); // Change image every 5 seconds
 }
 
 slideShow();

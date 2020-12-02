@@ -143,19 +143,53 @@ button:hover {
     color: black;
 }
 
+/* Top and Bottom borders come in */
+    /* stroke */
+    nav.stroke ul li a,
+    nav.fill ul li a {
+      position: relative;
+    }
+
+    nav.stroke ul li a,
+    nav.fill ul li a {
+      position: relative;
+    }
+    nav.stroke ul li a:after,
+    nav.fill ul li a:after {
+      position: absolute;
+      top: 25px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 0%;
+      content: '.';
+      color: transparent;
+      background: #ffffff;
+      height: 3px;
+    }
+
+    nav.stroke ul li a:hover:after {
+      width: 100%;
+    }
+
 .slideshow {
   width: 100%;
-  height: 750px;
+  height: 800px;
   object-fit: cover;
 }
 
 .skew-element {
-    height: 250px; 
-    position: relative; 
-    bottom: 155px;
+    height: 100px; 
     background: #24252A;
-    transform: skew(0, -5deg);
+    /*transform: skew(0, -5deg);*/
     z-index: 1;
+} 
+
+.skew-element-2 {
+  height: 100px; 
+  background: #24252A;
+  /*transform: skew(0, -5deg);*/
+  z-index: 1;
 } 
 
 .sub-title{
@@ -202,7 +236,7 @@ button:hover {
 
 .figure-item-bg {
   position: relative;
-  bottom: 225px;
+  bottom: 0;
   opacity: 0.15;
   width: 100%;
   height: 900px;
@@ -294,6 +328,35 @@ button:hover {
       padding: 65px 80px;
     }
 
+    /* Top and Bottom borders come in */
+    /* stroke */
+    nav.stroke ul li a,
+    nav.fill ul li a {
+      position: relative;
+    }
+
+    nav.stroke ul li a,
+    nav.fill ul li a {
+      position: relative;
+    }
+    nav.stroke ul li a:after,
+    nav.fill ul li a:after {
+      position: absolute;
+      top: 45px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 0%;
+      content: '.';
+      color: transparent;
+      background: #ffffff;
+      height: 3px;
+    }
+
+    nav.stroke ul li a:hover:after {
+      width: 100%;
+    }
+
     .toggle {
         display: block;
     }
@@ -314,44 +377,23 @@ button:hover {
         transform: translateX(0%); 
     }
 
-    /* Top and Bottom borders come in */
-    /* stroke */
-    nav.stroke ul li a,
-    nav.fill ul li a {
-      position: relative;
-    }
-
-    nav.stroke ul li a,
-    nav.fill ul li a {
-      position: relative;
-    }
-    nav.stroke ul li a:after,
-    nav.fill ul li a:after {
-      position: absolute;
-      top: 10px;
-      left: 0;
-      right: 0;
-      margin: auto;
-      width: 0%;
-      content: '.';
-      color: transparent;
-      background: #ffffff;
-      height: 3px;
-    }
-
-    nav.stroke ul li a:hover:after {
-      width: 100%;
-    }
-
     .slideshow {
       height: 700px;
     }
 
     .skew-element {
-        height: 240px; 
+        height: 120px; 
         bottom: 120px;
-        transform: skew(0, -5deg);
     }
+
+    .skew-element-2 {
+      position: relative;
+      bottom: 160px;
+      height: 120px; 
+      background: #24252A;
+      /*transform: skew(0, -5deg);*/
+      z-index: 1;
+    } 
 
     .sub-title{
       position: relative;
@@ -366,7 +408,7 @@ button:hover {
     }
 
     .article-content {
-      top: -20px;
+      top: -70px;
       width: 52%;
       height: 550px;
       padding: 7.5px 15px 15px 15px;
@@ -377,12 +419,12 @@ button:hover {
       bottom: 150px;
       opacity: 0.15;
       width: 100%;
-      height: 825px;
+      height: 1000px;
       z-index: -2;
     }
     
     .figure-item {
-      top: -20px;
+      top: -70px;
       left: -7.5%;
       border-radius: 10px;
       height: 550px;
@@ -391,7 +433,7 @@ button:hover {
     
     /* Next & previous buttons */
     .prev, .next {
-      top: 1800px;
+      top: 1770px;
       right: 70%;
       padding: 25px;
       font-size: 30px;
@@ -401,7 +443,7 @@ button:hover {
     /* Position the "next button" to the right */
     .next {
       right: 22.5%;
-      top: 1800px;
+      top: 1770px;
     }
     
     /* On hover, add a black background color with a little bit see-through */
@@ -428,12 +470,41 @@ button a{
   padding: 60px 60px;
 }
 
+/* Top and Bottom borders come in */
+    /* stroke */
+    nav.stroke ul li a,
+    nav.fill ul li a {
+      position: relative;
+    }
+
+    nav.stroke ul li a,
+    nav.fill ul li a {
+      position: relative;
+    }
+    nav.stroke ul li a:after,
+    nav.fill ul li a:after {
+      position: absolute;
+      top: 35px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 0%;
+      content: '.';
+      color: transparent;
+      background: #ffffff;
+      height: 3px;
+    }
+
+    nav.stroke ul li a:hover:after {
+      width: 100%;
+    }
+
 button {
     font-size: 1.5rem;
   }
   .article-content {
     position: absolute;
-    top: -50px;
+    top: -80px;
     width: 52%;
     height: 400px;
     padding: 7.5px 15px 15px 15px;
@@ -444,12 +515,12 @@ button {
     bottom: 150px;
     opacity: 0.15;
     width: 100%;
-    height: 600px;
+    height: 800px;
     z-index: -2;
   }
   
   .figure-item {
-    top: -50px;
+    top: -80px;
     left: -7.5%;
     border-radius: 10px;
     height: 400px;
@@ -458,7 +529,7 @@ button {
   
   /* Next & previous buttons */
   .prev, .next {
-    top: 1600px;
+    top: 1590px;
     right: 70%;
     padding: 17.5px;
     font-size: 25px;
@@ -468,7 +539,7 @@ button {
   /* Position the "next button" to the right */
   .next {
     right: 22.5%;
-    top: 1600px;
+    top: 1590px;
   }
 
   /* On hover, add a black background color with a little bit see-through */
@@ -573,12 +644,21 @@ button {
 
     .skew-element {
         width: 100%; 
-        height: 100px; 
+        height: 70px; 
         position: relative; 
-        bottom: 55px;
+        bottom: 20px;
         z-index: -1;
         background: #24252A;
-        transform: skew(0, -5deg);
+    } 
+
+    
+    .skew-element-2 {
+      position: relative;
+      bottom: 85px;
+      height: 70px; 
+      background: #24252A;
+      /*transform: skew(0, -5deg);*/
+      z-index: 1;
     } 
 
     .sub-title{
@@ -594,7 +674,7 @@ button {
 
     .article-content {
       position: absolute;
-      top: -630px;
+      top: -650px;
       right: 0;
       width: 52%;
       height: 200px;
@@ -614,13 +694,13 @@ button {
       bottom: 80px;
       opacity: 0.15;
       width: 100%;
-      height: 350px;
+      height: 400px;
       z-index: -2;
     }
     
     .figure-item {
       position: absolute;
-      top: -630px;
+      top: -650px;
       left: -7.5%;
       border-radius: 10px;
       height: 200px;
@@ -632,7 +712,7 @@ button {
     .prev, .next {
       cursor: pointer;
       position: absolute;
-      top: 810px;
+      top: 800px;
       right: 70%;
       width: auto;
       margin-top: -22px;
@@ -649,7 +729,7 @@ button {
     /* Position the "next button" to the right */
     .next {
       right: 22.5%;
-      top: 810px;
+      top: 800px;
       border-radius: 3px 0 0 3px;
     }
     
