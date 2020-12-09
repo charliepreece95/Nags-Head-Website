@@ -1,10 +1,8 @@
 const navSlider = () => {
     const toggle = document.querySelector(".toggle");
     const nav = document.querySelector(".nav-links");
+    const LgScreen = window.matchMedia("(min-width: 1024px)");
   
-    let reportWindowSize = () => {
-        nav.style.display = "flex";
-    }
     //toggle nav
     toggle.addEventListener("click", () => {
       //toggle animation 
@@ -14,7 +12,14 @@ const navSlider = () => {
           nav.style.display = "none";
       }
   });
-  window.addEventListener("resize", reportWindowSize);
+    //override toggle to display nav as flex on desktop when resized.
+    window.addEventListener("resize", () => {
+      if(LgScreen.matches) {
+        nav.style.display = "flex";
+      } else {
+        nav.style.display = "none";
+      }
+  });
 };
 
 navSlider();
