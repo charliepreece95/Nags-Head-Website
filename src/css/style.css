@@ -179,11 +179,13 @@ button:hover {
 }
 
 .skew-element {
-    height: 120px; 
-    background: #24252A;
-    /*transform: skew(0, -5deg);*/
-    z-index: 1;
-} 
+  width: 100%; 
+  height: 120px; 
+  position: relative; 
+  bottom: 155px;
+  z-index: 1;
+  background: #24252A;
+}
 
 .skew-element-2 {
   position: relative;
@@ -196,13 +198,13 @@ button:hover {
 
 .skew-element-3 {
   position: relative;
-  bottom: 160px;
+  bottom: 180px;
   height: 120px; 
   background: #24252A;
   /*transform: skew(0, -5deg);*/
   z-index: 1;
 } 
-
+/*
 .sub-title{
   position: relative;
   top: 5px;
@@ -214,6 +216,7 @@ button:hover {
   z-index: 2;
   text-align: center;
 }
+*/
 
 .about-content {
   position: absolute;
@@ -230,15 +233,15 @@ button:hover {
 }
 
 .article-content {
-  position: absolute;
+  position: relative;
   left: 55%;
-  top: -15px;
+  top: 15px;
   width: 40%;
   height: 400px;
   text-align: justify;
   background-color: white;
   padding: 30px;
-  border-radius: 10px;
+  border-radius: 5px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: none;
@@ -247,19 +250,19 @@ button:hover {
 
 .figure-item-bg {
   position: relative;
-  bottom: 0;
+  bottom: 170px;
   opacity: 0.15;
   width: 100%;
   height: 900px;
 }
 
 .figure-item {
-  position: absolute;
-  top: -65px;
+  position: relative;
+  top: 500px;
   left: 8%;
-  border-radius: 10px;
-  height: 500px;
-  width: 35%;
+  border-radius: 5px;
+  height: 575px;
+  width: 40%;
   display: none;
 }
 
@@ -268,7 +271,7 @@ button:hover {
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 1400px;
+  top: 2000px;
   right: 90%;
   width: auto;
   margin-top: -22px;
@@ -285,7 +288,7 @@ button:hover {
 /* Position the "next button" to the right */
 .next {
   right: 5%;
-  top: 1400px;
+  top: 2000px;
   border-radius: 3px 0 0 3px;
 }
 
@@ -303,7 +306,7 @@ button:hover {
 .prices h2 {
   text-align: center;
   padding: 25px 0 25px 0;
-  font-size: 46px;
+  font-size: 35px;
 }
 
 .prices ul li {
@@ -312,7 +315,7 @@ button:hover {
   margin: 0 0 10px 0;
   line-height: 1.6;
   margin-left: 20px;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .prices ul {
@@ -320,7 +323,7 @@ button:hover {
   column-rule: dotted 1px #333;
   list-style-type: none;
   margin-top: 10px;
-  padding: 0 0 25px 20px;
+  padding: 0 0 40px 20px;
 }
 
 /*Tablets*/
@@ -422,9 +425,13 @@ button:hover {
     }
 
     .skew-element {
-        height: 120px; 
-        bottom: 120px;
-    }
+      width: 100%; 
+      height: 120px; 
+      position: relative; 
+      bottom: 155px;
+      z-index: 1;
+      background: #24252A;
+  }
 
     .skew-element-2 {
       position: relative;
@@ -443,7 +450,7 @@ button:hover {
       /*transform: skew(0, -5deg);*/
       z-index: 1;
     } 
-
+/*
     .sub-title{
       position: relative;
       top: 30px;
@@ -455,44 +462,47 @@ button:hover {
       z-index: 2;
       text-align: center;
     }
-
+*/
     .article-content {
-      top: -70px;
-      width: 52%;
-      height: 550px;
+      left: 0%;
+      position: relative;
+      top: 765px;
+      width: 100%;
+      right: 0;
+      height: 200px;
       padding: 7.5px 15px 15px 15px;
-      font-size: 22px;
+      font-size: 16px;
     }
     
     .figure-item-bg {
-      bottom: 150px;
+      bottom: 160px;
       opacity: 0.15;
       width: 100%;
-      height: 1000px;
+      height: 875px;
       z-index: -2;
     }
     
     .figure-item {
-      top: -70px;
-      left: -7.5%;
-      border-radius: 10px;
-      height: 550px;
-      width: 55%;
+      left: 17.5%;;
+      top: 745px;
+      border-radius: 5px;
+      height: 520px;
+      width: 65%;
     }
     
     /* Next & previous buttons */
     .prev, .next {
-      top: 1770px;
-      right: 70%;
-      padding: 25px;
-      font-size: 30px;
+      top: 2735px;
+      right: 75%;
+      padding: 17.5px;
+      font-size: 25px;
       border-radius: 5px;
      
     }
     /* Position the "next button" to the right */
     .next {
       right: 22.5%;
-      top: 1770px;
+      top: 2735px;
     }
     
     /* On hover, add a black background color with a little bit see-through */
@@ -515,7 +525,7 @@ button:hover {
     .prices ul li {
       color: black;
       padding: 0 10px 0 10px;
-      margin: 0 0 10px 0;
+      margin: 5px 0 10px 0;
       line-height: 1.6;
       margin-left: 20px;
       font-size: 30px;
@@ -526,7 +536,7 @@ button:hover {
       column-rule: dotted 1px #333;
       list-style-type: none;
       margin-top: 10px;
-      padding: 0 0 25px 25px;
+      padding: 0 0 30px 25px;
     }
 }
 
@@ -577,20 +587,32 @@ button:hover {
       width: 100%;
     }
 
-button {
+    button {
     font-size: 1.5rem;
-  }
+    }
+
+  .skew-element {
+    width: 100%; 
+    height: 120px; 
+    position: relative; 
+    bottom: 155px;
+    z-index: 1;
+    background: #24252A;
+}
+
   .article-content {
-    position: absolute;
-    top: -80px;
-    width: 52%;
-    height: 400px;
+    left: 0%;
+    position: relative;
+    top: 470px;
+    width: 100%;
+    right: 0;
+    height: 200px;
     padding: 7.5px 15px 15px 15px;
     font-size: 16px;
   }
   
   .figure-item-bg {
-    bottom: 150px;
+    bottom: 160px;
     opacity: 0.15;
     width: 100%;
     height: 800px;
@@ -598,17 +620,17 @@ button {
   }
   
   .figure-item {
-    top: -80px;
-    left: -7.5%;
-    border-radius: 10px;
-    height: 400px;
-    width: 55%;
+    left: 17.5%;;
+    top: 450px;
+    border-radius: 5px;
+    height: 450px;
+    width: 65%;
   }
   
   /* Next & previous buttons */
   .prev, .next {
-    top: 1590px;
-    right: 70%;
+    top: 2360px;
+    right: 75%;
     padding: 17.5px;
     font-size: 25px;
     border-radius: 5px;
@@ -617,7 +639,7 @@ button {
   /* Position the "next button" to the right */
   .next {
     right: 22.5%;
-    top: 1590px;
+    top: 2360px;
   }
 
   /* On hover, add a black background color with a little bit see-through */
@@ -651,6 +673,10 @@ button {
     list-style-type: none;
     margin-top: 10px;
     padding-bottom: 20px;
+  }
+
+  .skew-element-3 {
+    bottom: 170px;
   }
 }
 
@@ -749,18 +775,18 @@ button {
 
     .skew-element {
         width: 100%; 
-        height: 70px; 
+        height: 65px; 
         position: relative; 
-        bottom: 20px;
-        z-index: -1;
+        bottom: 60px;
+        z-index: 1;
         background: #24252A;
     } 
 
     
     .skew-element-2 {
       position: relative;
-      bottom: 85px;
-      height: 70px; 
+      bottom: 55px;
+      height: 65px; 
       background: #24252A;
       /*transform: skew(0, -5deg);*/
       z-index: 1;
@@ -768,13 +794,13 @@ button {
 
     .skew-element-3 {
       position: relative;
-      bottom: 80px;
-      height: 70px; 
+      bottom: 90px;
+      height: 65px; 
       background: #24252A;
       /*transform: skew(0, -5deg);*/
       z-index: 1;
     } 
-
+/*
     .sub-title{
       position: relative;
       top: 10px;
@@ -785,18 +811,20 @@ button {
       font-size: 1.5rem;
       text-align: center;
     }
-
+*/
     .article-content {
-      position: absolute;
-      top: -650px;
-      right: 0;
-      width: 52%;
-      height: 200px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      top: 15px;
+      width: 300px;
+      height: 100px;
       text-align: justify;
       background-color: white;
       padding: 7.5px 15px 15px 15px;
       font-size: 10px;
-      border-radius: 10px;
+      border-radius: 5px;
       overflow: hidden;
       text-overflow: ellipsis;
       display: none;
@@ -808,17 +836,20 @@ button {
       bottom: 80px;
       opacity: 0.15;
       width: 100%;
-      height: 400px;
+      height: 425px;
       z-index: -2;
     }
     
     .figure-item {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
       position: absolute;
-      top: -650px;
-      left: -7.5%;
-      border-radius: 10px;
-      height: 200px;
-      width: 55%;
+      left: 12.5%;
+      top: -205px;
+      border-radius: 5px;
+      height: 210px;
+      width: 70%;
       display: none;
     }
     
@@ -826,7 +857,7 @@ button {
     .prev, .next {
       cursor: pointer;
       position: absolute;
-      top: 800px;
+      top: 1350px;
       right: 70%;
       width: auto;
       margin-top: -22px;
@@ -843,7 +874,7 @@ button {
     /* Position the "next button" to the right */
     .next {
       right: 22.5%;
-      top: 800px;
+      top: 1350px;
       border-radius: 3px 0 0 3px;
     }
     
@@ -854,7 +885,7 @@ button {
 
     .prices {
       position: relative;
-      bottom: 80px;
+      bottom: 50px;
       background-color: #f5f5f5;
     }
 
@@ -885,11 +916,65 @@ button {
 @media (min-width: 540px) and (max-width: 540px)  {
   .nav-links {
     top: 16vh;
-    width: 50%;}
+    width: 50%;
+  }
+  .skew-element-3 {
+    bottom: 85px;
+  } 
 }
 
 @media (min-width: 280px) and (max-width: 280px) {
   .nav-links li:nth-child(3){
      padding: 30px 0 30px 0;
   }
+      
+  .skew-element-2 {
+    bottom: 45px;
+  } 
+
+  .article-content {
+    top: 100px;
+    width: 100%;
+  }
+  
+  .figure-item-bg {
+    height: 400px;
+  }
+  
+  .figure-item {
+    top: -82.5px;
+    height: 170px;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    top: 1435px;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    top: 1435px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 320px) {
+  .figure-item {
+    top: -155px;
+    left: 7.5%;
+    width: 80%;
+  }
+
+  .article-content {
+    width: 100%;
+    top: 65px;
+  }
+    /* Next & previous buttons */
+    .prev, .next {
+      top: 1400px;
+    }
+    
+    /* Position the "next button" to the right */
+    .next {
+      top: 1400px;
+    }
 }
