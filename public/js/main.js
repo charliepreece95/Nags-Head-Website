@@ -1,3 +1,4 @@
+//Nav slider for mobile and tablet  
 const navSlider = () => {
     const toggle = document.querySelector(".toggle");
     const nav = document.querySelector(".nav-links");
@@ -24,6 +25,9 @@ const navSlider = () => {
 
 navSlider();
 
+//New function
+
+//Automated slideshow of images spanning 3 seconds
 let slideIndex = 0;
 
 const slideShow = () => {
@@ -34,11 +38,14 @@ const slideShow = () => {
     slideIndex++;
     if (slideIndex > slides.length) {slideIndex = 1}    
     slides[slideIndex-1].style.display = "block";  
-    setTimeout(slideShow, 8000); // Change image every 5 seconds
+    setTimeout(slideShow, 3000); // Change image every 5 seconds
 }
 
 slideShow();
 
+//New function
+
+//Manual slideshow with toggle buttons
 let slideIndexNo = 1;
 
 const showSlides = (toggle) => {
@@ -66,3 +73,38 @@ const plusSlides = (toggle) => {
   }
 
 showSlides(slideIndexNo);
+
+//New function
+
+let slideThumbnailIndex = 1;
+
+
+const showSlideShow = (n) => {
+  let i;
+  let slides = document.getElementsByClassName("slides");
+  let thumbnails = document.getElementsByClassName("thumbnail");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideThumbnailIndex = 1}
+  if (n < 1) {slideThumbnailIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < thumbnails.length; i++) {
+    thumbnails[i].className = thumbnails[i].className.replace(" active", "");
+  }
+  slides[slideThumbnailIndex-1].style.display = "block";
+  thumbnails[slideThumbnailIndex-1].className += " active";
+  captionText.innerHTML = thumbnails[slideThumbnailIndex-1].alt;
+}
+
+// Next/previous controls
+const plusSlideImage = (n) => {
+  showSlideShow(slideThumbnailIndex += n);
+}
+
+// Thumbnail image controls
+const currentSlideImage = (n) => {
+  showSlideShow(slideThumbnailIndex = n);
+}
+
+showSlideShow(slideThumbnailIndex);
