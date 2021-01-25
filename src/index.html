@@ -19,7 +19,7 @@
                 <li class="item"><a href="#">Menu</a></li>
                 <li class="item"><a href="#">Other</a></li>
                 <div class="wrapper">
-                    <button type="button" class="btn"><a href="#">Contact</a></button>
+                    <button type="button" class="btn-nav"><a href="#">Contact</a></button>
                 </div> 
                 </ul>
             <div class="toggle">
@@ -173,6 +173,32 @@
             </aside>
         </section>
         <div class="skew-element-4"></div>
+        <section class="form">
+            <h1>Book a Table</h1>
+            <!--Send data to DB-->
+            <form method="POST" action="index.php" id="resetForm" class="text-justify">
+                <!--Input data to DB-->
+                <p class="name">Name</p>
+                    <input type="text" name="_name" id="name" class="form-control">
+                <p class="number">Number</p>
+                    <input type="number" name="_number" id="number" class="form-control">
+                <p class="text">Table / No of people</p>
+                    <textarea name="_text" id="text" class="form-control"></textarea>
+                <p class="date">DateTime</p>
+                    <input type="date" name="_date" id="date" class="form-control">
+                <!--<p class="time">Time</p>-->
+                    <input type="time" name="_time" id="time" class="form-control">
+                <!--Validation-->
+                <div id="validation" class="form-text text-muted">
+                    <p id="valid"></p>
+                </div>
+                <!--Submit button to DB-->
+                <div class="flex-center">
+                    <button type="submit" name="submit" id="btn" class="btn btn-success font-weight-bold" onclick='Submit()'>Submit</button>
+                    <button type="button" id="btnClear" class="btn btn-danger font-weight-bold" onclick="Clear()">Clear</button>
+                </div>
+        </section>
+        <div class="skew-element-5"></div>
         </main>
     <footer>
         <p>The Nags Head, Copyright &copy; 2020</p>
