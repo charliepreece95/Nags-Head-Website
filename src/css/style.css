@@ -37,7 +37,7 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 30px 5% 30px 5%; 
+    padding: 30px 5% 10px 5%; 
     background-color: #24252A;
 }
 
@@ -54,6 +54,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 25px;
 }
 
 .nav-links li {
@@ -65,6 +66,7 @@ header {
 .nav-links li a {
     transition: all 0.3s ease 0s;
     letter-spacing: 2.5px;
+    font-size: 20px;
     cursor: pointer;
 }
 
@@ -96,81 +98,82 @@ header {
     top: 0px;
   }
   
-  .toggle span:nth-child(2),.toggle span:nth-child(3) {
-    top: 18px;
-  }
-  
-  .toggle span:nth-child(4) {
-    top: 36px;
-  }
-  
-  .toggle.open span:nth-child(1) {
-    top: 18px;
-    width: 0%;
-    left: 50%;
-  }
-  
-  .toggle.open span:nth-child(2) {
-    transform: rotate(45deg);
-  }
-  
-  .toggle.open span:nth-child(3) {
-    transform: rotate(-45deg);
-  }
-  
-  .toggle.open span:nth-child(4) {
-    top: 18px;
-    width: 0%;
-    left: 50%;
-  }
+.toggle span:nth-child(2),.toggle span:nth-child(3) {
+  top: 18px;
+}
+
+.toggle span:nth-child(4) {
+  top: 36px;
+}
+
+.toggle.open span:nth-child(1) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+.toggle.open span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.toggle.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.toggle.open span:nth-child(4) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
 
 button {
-    border: none;
-    color: white;
-    padding: 10px 15px;
-    margin-left: 35px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    background-color: rgba(0, 136, 169, 1);
-    border-radius: 50px;
-    transition: all 0.3s ease 0s;   
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  margin-left: 35px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  background-color: rgba(0, 136, 169, 1);
+  border-radius: 50px;
+  transition: all 0.3s ease 0s;   
 }
 
 button:hover {
-    background-color: rgba(0, 108, 134, 0.5);
-    color: black;
+  background-color: rgba(0, 108, 134, 0.5);
+  color: black;
 }
 
+
 /* Top and Bottom borders come in */
-    /* stroke */
-    nav.stroke ul li a,
-    nav.fill ul li a {
-      position: relative;
-    }
+  /* stroke */
+  nav.stroke ul li a,
+  nav.fill ul li a {
+    position: relative;
+  }
 
-    nav.stroke ul li a,
-    nav.fill ul li a {
-      position: relative;
-    }
-    nav.stroke ul li a:after,
-    nav.fill ul li a:after {
-      position: absolute;
-      top: 25px;
-      left: 0;
-      right: 0;
-      margin: auto;
-      width: 0%;
-      content: '.';
-      color: transparent;
-      background: #ffffff;
-      height: 3px;
-    }
+  nav.stroke ul li a,
+  nav.fill ul li a {
+    position: relative;
+  }
+  nav.stroke ul li a:after,
+  nav.fill ul li a:after {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #ffffff;
+    height: 3px;
+  }
 
-    nav.stroke ul li a:hover:after {
-      width: 100%;
-    }
+  nav.stroke ul li a:hover:after {
+    width: 100%;
+  }
 
 .slideshow {
   width: 100%;
@@ -499,7 +502,7 @@ input[type=text], [type=number], [type=date], [type=time] select {
     width: 20%;
 }
   
-button[type=button], button[type=submit] {
+.btn[type=button], .btn[type=submit] {
     padding: 15px;
     width: 15%;
     margin-right: 10px;
@@ -546,6 +549,7 @@ text-align: center;
       font-size: 2rem;
       letter-spacing: 2px;
       padding: 10px 15px;
+      font-size: 32px;
     }
   
     .wrapper {
@@ -558,6 +562,10 @@ text-align: center;
     .nav-links li {
       font-size: 2rem;
       padding: 65px 80px;
+    }
+
+    .nav-links li a {
+      font-size: 32px;
     }
 
     /* Top and Bottom borders come in */
@@ -917,7 +925,7 @@ text-align: center;
         width: 27%;
     }
       
-    button[type=button], button[type=submit] {
+    .btn[type=button], .btn[type=submit] {
         padding: 15px;
         width: 30%;
         margin-right: 10px;
@@ -942,11 +950,17 @@ text-align: center;
 
     button a{      
       font-size: 1.5rem;
+      padding: 5px;
+      font-size: 28px;
     }
 
     .nav-links li {
       font-size: 1.5rem;
       padding: 60px 60px;
+    }
+
+    .nav-links li a {
+      font-size: 28px;
     }
 
 /* Top and Bottom borders come in */
@@ -1261,7 +1275,7 @@ text-align: center;
       width: 26.5%;
   }
     
-  button[type=button], button[type=submit] {
+  .btn[type=button], .btn[type=submit] {
       padding: 10px;
       width: 25%;
       margin-right: 10px;
@@ -1302,7 +1316,8 @@ text-align: center;
   }
 
   button {
-    padding: 8px 12px 14px 14px;
+    padding: 14px 12px 14px 14px;
+    font-size: 16px;
   }
 
   .wrapper {
@@ -1313,8 +1328,11 @@ text-align: center;
   }
 
   .nav-links li {
+    padding: 20px 30px;
+  }
+
+  .nav-links li a {
     font-size: 16px;
-    padding: 30px 30px;
   }
 
   .active {
@@ -1689,7 +1707,7 @@ text-align: center;
       width: 26%;
   }
     
-  button[type=button], button[type=submit] {
+  .btn[type=button], .btn[type=submit] {
       padding: 5px;
       width: 26%;
       margin-right: 10px;
@@ -1722,7 +1740,7 @@ text-align: center;
     height: 70px;
   }
 
-  button[type=button], button[type=submit] {
+  .btn[type=button], .btn[type=submit] {
     padding: 8px;
     width: 26%;
     font-size: 20px;
@@ -1775,7 +1793,7 @@ text-align: center;
     height: 60px;
   } 
 
-  button[type=button], button[type=submit] {
+  .btn[type=button], .btn[type=submit] {
     padding: 8px;
     margin-top: 15px;
     width: 30%;
@@ -1842,7 +1860,7 @@ text-align: center;
         width: 26%;
     }
        
-    button[type=button], button[type=submit] {
+    .btn[type=button], .btn[type=submit] {
       padding: 8px;
       width: 30%;
       margin-top: 20px;
