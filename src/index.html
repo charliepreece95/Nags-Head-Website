@@ -13,11 +13,11 @@
     <header>
         <h1 class="logo"><a href="#">The Nags Head</a></h1>
         <nav class="stroke">
-             <ul class="nav-links">   
-                <li class="item"><a href="#">About</a></li>
-                <li class="item"><a href="#">History</a></li>
-                <li class="item"><a href="#">Menu</a></li>
-                <li class="item"><a href="#">Other</a></li>
+             <ul class="nav-links">  
+                <li class="item"><a href="#history">History</a></li> 
+                <li class="item"><a href="#price-list">Prices</a></li>
+                <li class="item"><a href="#tour">Tour</a></li>
+                <li class="item"><a href="#book">Book</a></li>
                 <div class="wrapper">
                     <button type="button" class="btn-nav"><a href="#">Contact</a></button>
                 </div> 
@@ -46,7 +46,7 @@
             </figure>
         </section>
         <div class="skew-element"></div>
-        <section class="prices">
+        <section class="prices" id="price-list">
             <h2>Price List</h2>
                 <ul>
                     <li>Carling: £3.70</li>
@@ -81,7 +81,7 @@
                     <li>Rizla: £0.50</li>
                 </ul>
         </section>
-        <div class="skew-element-2"></div>
+        <div class="skew-element-2" id="history"></div>
         <section class="about-section">
             <figure>
                 <img class="figure-item-bg" src="media/images/nags_head_figure_2.jpg">
@@ -131,7 +131,7 @@
         </div>
         </section>
         <div class="skew-element-3"></div>
-        <section class="tour-section">
+        <section class="tour-section" id="tour">
             <figure class="slides">
                   <img class="gallery" src="./media/images/gallery1.jpg">
             </figure>
@@ -173,7 +173,7 @@
             </aside>
         </section>
         <div class="skew-element-4"></div>
-        <section class="form">
+        <section class="form" id="book">
             <h1>Book a Table</h1>
             <!--Send data to DB-->
             <form method="POST" action="index.php" id="resetForm" class="text-justify">

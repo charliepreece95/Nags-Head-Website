@@ -1,3 +1,5 @@
+//const { reset } = require("browser-sync");
+
 //Nav slider for mobile and tablet  
 const navSlider = () => {
     const toggle = document.querySelector(".toggle");
@@ -24,6 +26,23 @@ const navSlider = () => {
 };
 
 navSlider();
+/*
+const resize = () => {
+  window.addEventListener("resize", () => {
+  const file = location.pathname.split( "./css" ).pop();
+  const x = window.watchMedia("(min-width: 320px) and (max-width: 320px)");
+  if(x.matches) {
+    const link = document.createElement( "link" );
+    link.href = file.substr( 0, file.lastIndexOf(".") ) + ".css";
+    link.type = "text/css";
+    link.rel = "stylesheet";
+    link.media = "screen,print";
+  }
+ document.getElementsByTagName( "head" )[0].appendChild(link);
+});};
+
+resize();
+*/
 
 //New function
 
