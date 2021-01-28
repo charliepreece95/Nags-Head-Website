@@ -57,7 +57,7 @@ const slideShow = () => {
     slideIndex++;
     if (slideIndex > slides.length) {slideIndex = 1}    
     slides[slideIndex-1].style.display = "block";  
-    setTimeout(slideShow, 3000); // Change image every 5 seconds
+    setTimeout(slideShow, 5000); // Change image every 5 seconds
 }
 
 slideShow();

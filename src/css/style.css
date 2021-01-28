@@ -47,7 +47,7 @@ header {
 .logo {
     cursor: pointer;
     margin-right: auto;
-    font-size: 25px; 
+    font-size: 35px; 
     font-weight: 600; 
     text-transform: uppercase;
     letter-spacing: 5px;
@@ -180,7 +180,7 @@ button:hover {
 
 .slideshow {
   width: 100%;
-  height: 920px;
+  height: 900px;
   object-fit: cover;
 }
 
@@ -210,40 +210,20 @@ button:hover {
   /*transform: skew(0, -5deg);*/
   z-index: 1;
 } 
-/*
-.sub-title{
+
+.about-section {
   position: relative;
-  top: 5px;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 800;
-  font-size: 65px;
-  z-index: 2;
-  text-align: center;
-}
-*/
-
-.about-content {
-  position: absolute;
-  top: 1325px;
-  right: 10%;
-  left: 10%;
-}
-
-.flex-items {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid;
+  height: 800px;
 }
 
 .article-content {
   position: relative;
-  left: 55%;
-  top: 15px;
+  left: 50%;
+  top: -1390px;
   width: 40%;
-  height: 400px;
+  padding: 20px 20px 30px 20px;
+  height: 420px;
+  font-size: 22px;
   text-align: justify;
   background-color: white;
   padding: 30px;
@@ -251,34 +231,33 @@ button:hover {
   overflow: hidden;
   text-overflow: ellipsis;
   display: none;
-  /*overflow: scroll;*/
 }
+
 
 .figure-item-bg {
   position: relative;
-  bottom: 170px;
+  bottom: 160px;
   opacity: 0.15;
   width: 100%;
-  height: 900px;
+  height: 800px;
 }
 
 .figure-item {
   position: relative;
-  top: 500px;
-  left: 8%;
+  top: -875px;
+  left: 10%;
   border-radius: 5px;
-  height: 575px;
-  width: 40%;
+  height: 600px;
+  width: 30%;
   display: none;
 }
-
 
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 800px;
-  right: 100%;
+  top: 240px;
+  right: 94%;
   width: auto;
   margin-top: -22px;
   padding: 16px;
@@ -293,8 +272,8 @@ button:hover {
 
 /* Position the "next button" to the right */
 .next {
-  right: -5%;
-  top: 800px;
+  right: 2%;
+  top: 240px;
   border-radius: 3px 0 0 3px;
 }
 
@@ -320,8 +299,8 @@ button:hover {
   padding: 0 20px 0 20px;
   margin: 0 0 10px 0;
   line-height: 1.6;
-  margin-left: 20px;
-  font-size: 20px;
+  margin-left: 30px;
+  font-size: 22px;
 }
 
 .prices ul {
@@ -334,7 +313,7 @@ button:hover {
 
 .gallery, .thumbnail  {
   width: 100%; 
-  height: 800px;
+  height: 780px;
 }
 
 .thumbnail {
@@ -523,10 +502,1449 @@ input[type=text], [type=number], [type=date], [type=time] select {
 text-align: center;
 }
 
+@media (max-width:1024px) {
+  /*Tablets*/
+  body {
+    overflow-X: hidden;
+  }
+
+  .logo {
+    font-size: 50px; 
+  }
+  /*position: absolute doesn't seem to work*/
+  .nav-links  {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 75vh;
+    top: 13vh;
+    width: 55%;
+    background-color: #24252A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.5s ease-in;
+    z-index: 3;
+    display: none;
+  }
+
+  button a{      
+    font-size: 2rem;
+    letter-spacing: 2px;
+    padding: 10px 15px;
+    font-size: 32px;
+  }
+
+  .wrapper {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top: 20px;
+  }
+
+  .nav-links li {
+    font-size: 2rem;
+    padding: 65px 80px;
+  }
+
+  .nav-links li a {
+    font-size: 40px;
+  }
+
+  /* Top and Bottom borders come in */
+  /* stroke */
+  nav.stroke ul li a,
+  nav.fill ul li a {
+    position: relative;
+  }
+
+  nav.stroke ul li a,
+  nav.fill ul li a {
+    position: relative;
+  }
+  nav.stroke ul li a:after,
+  nav.fill ul li a:after {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #ffffff;
+    height: 3px;
+  }
+
+  nav.stroke ul li a:hover:after {
+    width: 100%;
+  }
+
+  .toggle {
+    display: block;
+  }
+
+  .toggle span {
+    height: 7px;
+    width: 80%;
+  }
+
+  button {
+    margin: 0 0 7.5% 0;
+    padding: 22px 28px;
+    font-size: 1.5rem;
+    margin-bottom: 45px;
+  }
+
+  .nav-active {
+    transform: translateX(0%); 
+  }
+
+  .slideshow {
+    height: 1100px;
+  }
+
+  .skew-element {
+    width: 100%; 
+    height: 120px; 
+    position: relative; 
+    bottom: 155px;
+    z-index: 1;
+    background: #24252A;
+  }
+
+  .skew-element-2 {
+    position: relative;
+    bottom: 160px;
+    height: 120px; 
+    background: #24252A;
+    /*transform: skew(0, -5deg);*/
+    z-index: 1;
+  } 
+
+  .skew-element-3 {
+    position: relative;
+    bottom: 160px;
+    height: 120px; 
+    background: #24252A;
+    /*transform: skew(0, -5deg);*/
+    z-index: 1;
+  }   
+  
+  .about-section {
+    position: relative;
+    height: 750px;
+  }
+
+  .article-content {
+    position: relative;
+    left: 57%;
+    top: -1325px;
+    width: 40%;
+    padding: 20px 20px 30px 20px;
+    height: 420px;
+    font-size: 22px;
+  }
+
+  .figure-item-bg {
+    position: relative;
+    bottom: 160px;
+    opacity: 0.15;
+    width: 100%;
+    height: 750px;
+  }
+
+  .figure-item {
+    position: relative;
+    top: -830px;
+    left: 4%;
+    border-radius: 5px;
+    height: 550px;
+    width: 50%;
+    display: none;
+  }
+
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 515px;
+    right: 75%;
+    padding: 15px;
+    font-size: 35px;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 21%;
+    top: 515px;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+
+  .prices {
+    position: relative;
+    bottom: 160px;
+    background-color: #f5f5f5;
+  }
+
+  .prices h2 {
+    text-align: center;
+    padding: 20px 0 20px 0;
+    font-size: 46px;
+  }
+
+  .prices ul li {
+    color: black;
+    padding: 0 10px 0 10px;
+    margin: 5px 0 10px 0;
+    line-height: 1.6;
+    margin-left: 10px;
+    font-size: 30px;
+  }
+
+  .prices ul {
+    column-count: 3;
+    column-rule: dotted 1px #333;
+    list-style-type: none;
+    margin-top: 10px;
+    padding: 0 0 30px 25px;
+  }
+
+  .gallery, .thumbnail  {
+    width: 100%; 
+    height: 650px;
+  }
+
+  .thumbnail {
+    height: 130px;
+  }
+
+  .tour-section {
+    position: relative;
+    bottom: 175px;
+  }
+
+  .slides {
+    display: none;
+    margin-bottom: -5px;
+  }
+
+  .cursor {
+    cursor: pointer;
+  } 
+
+  .prev-image,
+  .next-image {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 15px;
+    margin-top: -35px;
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .next-image {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev-image:hover,
+  .next-image:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 12px 16px;
+    color: white;
+  }
+
+  .caption-container p{
+    font-size: 60px
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /* Six columns side by side */
+  .column {
+    float: left;
+    width: 20%; 
+  }
+
+  .fade-thumbnail {
+    opacity: 0.6;
+  }
+
+  .active, .fade-thumbnail:hover { 
+    opacity: 1;
+  }
+
+  .skew-element-4 {
+    position: relative;
+    bottom: 180px;
+    height: 120px; 
+    background: #24252A;
+    /*transform: skew(0, -5deg);*/
+    z-index: 1;
+  } 
+
+  .skew-element-5 {
+    position: relative;
+    bottom: 180px;
+    height: 120px; 
+    background: #24252A;
+    /*transform: skew(0, -5deg);*/
+    z-index: 1;
+  } 
+
+    /*form validation section*/
+  .form {
+    position: relative;
+    bottom: 180px;
+  }
+
+  h1 {   
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-size: 60px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type=text], [type=number], [type=date], [type=time] select {
+    /*width: 50%;*/
+    margin: 30px, 0px, 30px, 0;
+    box-sizing: border-box;
+    }
+
+  .flex-center {
+    display: flex;
+    justify-content: center;
+  }
+
+  .name, .number, .date, .time, .text {
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+  }
+
+  .name, .number, .text, .date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px 0 5px 0;
+    padding-bottom: 8px;
+  }
+
+
+  #name, #number, #date, #time, #text {
+    border: 1.25px solid black;
+  }
+    
+  #name, #number, #text{
+    margin: 0 auto;
+    width: 65%;
+    padding: 20px;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    border-radius: 8px;
+  }
+
+  #date, #time {
+    position: relative;
+    left: 17.25%;
+    padding: 15px;  
+    font-size: 30px;
+    border-radius: 8px;
+  }
+
+  #date {
+    width: 38%;
+  }
+
+  #time { 
+    width: 27%;
+  }
+    
+  .btn[type=button], .btn[type=submit] {
+    padding: 15px;
+    width: 30%;
+    margin-right: 10px;
+    margin-left:  10px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 35px;
+  }
+
+  #validation {
+  text-align: center;
+  }
+}
+
+@media (min-width:768px) and (max-width:768px) {
+  /*ipad*/
+  .logo {
+      font-size: 25px;
+      margin-left: 0;
+  }
+  .nav-links {
+    top: 17vh;
+    width: 55%;
+    height: 620px;
+    z-index: 3;
+    border-radius: 5px; 
+  }
+
+  button {      
+      font-size: 25px;
+      padding: 15px;
+      font-size: 38px;
+  }
+
+  button a{      
+    font-size: 25px;
+  }
+
+  .wrapper {
+    margin-top: 15px;
+  }
+
+  .nav-links li {
+      margin-top: -20px;
+      font-size: 1.75rem;
+      padding: 50px 50px;
+  }
+
+  .nav-links li a {
+      font-size: 25px;
+  }
+
+  /* Top and Bottom borders come in */
+  /* stroke */
+  nav.stroke ul li a,
+  nav.fill ul li a {
+      position: relative;
+  }
+
+  nav.stroke ul li a,
+  nav.fill ul li a {
+      position: relative;
+  }
+  nav.stroke ul li a:after,
+  nav.fill ul li a:after {
+      position: absolute;
+      top: 35px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 0%;
+      content: '.';
+      color: transparent;
+      background: #ffffff;
+      height: 3px;
+  }
+
+  nav.stroke ul li a:hover:after {
+      width: 100%;
+  }
+
+  .slideshow {
+    height: 750px;
+  }
+
+  button {
+  font-size: 1.5rem;
+  }
+
+  .skew-element {
+  width: 100%; 
+  height: 110px; 
+  position: relative; 
+  bottom: 155px;
+  z-index: 1;
+  background:  #24252A;;
+  }
+
+   .about-section {
+    position: relative;
+    height: 550px;
+  }
+
+  .article-content {
+    position: relative;
+    left: 12.5%;
+    top: -670px;
+    width: 75%;
+    padding: 15px 15px 0 15px;
+    height: 130px;
+    font-size: 16px;
+  }
+
+  .figure-item-bg {
+    position: relative;
+    bottom: 160px;
+    opacity: 0.15;
+    width: 100%;
+    height: 540px;
+  }
+
+  .figure-item {
+    position: relative;
+    top: -690px;
+    left: 24%;
+    border-radius: 5px;
+    height: 350px;
+    width: 50%;
+    display: none;
+  }
+
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    right: 82%;
+    padding: 15px;
+    font-size: 25px;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 15%;
+    top: 0px;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  }
+
+  .prices {
+  position: relative;
+  bottom: 160px;
+  background-color: #f5f5f5;
+  }
+
+  .prices h2 {
+  text-align: center;
+  padding: 20px 0 15px 0;
+  }
+
+  .prices ul li {
+  color: black;
+  padding: 0 10px 0 10px;
+  margin: 0 0 10px 0;
+  line-height: 1.6;
+  margin-left: 0;
+  font-size: 20px;
+  }
+
+  .prices ul {
+  column-count: 3;
+  column-rule: dotted 1px #333;
+  list-style-type: none;
+  margin-top: 10px;
+  padding-bottom: 20px;
+  }
+
+  .skew-element-3 {
+  bottom: 170px;
+  height: 110px; 
+  }
+
+  .skew-element-4 {
+  position: relative;
+  bottom: 180px;
+  height: 110px; 
+  background: #24252A;
+  z-index: 1;
+  } 
+
+  .skew-element-5 {
+  position: relative;
+  bottom: 180px;
+  height: 110px; 
+  background: #24252A;
+  /*transform: skew(0, -5deg);*/
+  z-index: 1;
+  } 
+
+  .gallery, .thumbnail  {
+  width: 100%; 
+  height: 500px;
+  }
+
+  .thumbnail {
+  height: 95px;
+  }
+
+  .tour-section {
+  position: relative;
+  bottom: 175px;
+  }
+
+  .slides {
+  display: none;
+  margin-bottom: -5px;
+  }
+
+  .cursor {
+  cursor: pointer;
+  } 
+
+  .prev-image,
+  .next-image {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 12px;
+  margin-top: -35px;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+  }
+
+  .next-image {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev-image:hover,
+  .next-image:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 9px 16px;
+  color: white;
+  }
+
+  .caption-container p{
+      font-size: 40px;
+  }
+
+  .row:after {
+  content: "";
+  display: table;
+  clear: both;
+  }
+
+  /* Six columns side by side */
+  .column {
+  float: left;
+  width: 20%;
+  }
+
+  .fade-thumbnail {
+  opacity: 0.6;
+  }
+
+  .active, .fade-thumbnail:hover { 
+  opacity: 1;
+  }
+
+  /*form validation section*/
+  .form {
+  position: relative;
+  bottom: 180px;
+  }
+
+  h1 {   
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 45px;
+  font-weight: 700;
+  text-align: center;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  }
+
+  input[type=text], [type=number], [type=date], [type=time] select {
+      /*width: 50%;*/
+      margin: 30px, 0px, 30px, 0;
+      box-sizing: border-box;
+  }
+
+  .flex-center {
+      display: flex;
+      justify-content: center;
+  }
+
+  .name, .number, .date, .time, .text {
+      font-size: 22px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 700;
+  }
+
+  .name, .number, .text, .date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 18px 0 5px 0;
+  padding-bottom: 5px;
+  }
+
+
+  #name, #number, #date, #time, #text {
+  border: 1.25px solid black;
+  }
+      
+  #name, #number, #text{
+      margin: 0 auto;
+      width: 65%;
+      padding: 15px;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;  
+      border-radius: 8px;
+  }
+
+  #date, #time {
+      position: relative;
+      left: 17.25%;
+      padding: 8px;  
+      font-size: 20px;
+      border-radius: 8px;
+  }
+
+  #date {
+      width: 38%;
+  }
+
+  #time { 
+      width: 26.5%;
+  }
+
+  .btn[type=button], .btn[type=submit] {
+      padding: 10px;
+      width: 25%;
+      margin-right: 10px;
+      margin-left:  10px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      font-size: 25px;
+  }
+
+  #validation {
+  text-align: center;
+  }
+}
+@media (max-width:766px) {
+  /*mobile*/
+  .logo {
+    font-size: 20px; 
+  }
+
+  header {
+    padding: 0 5% 0 5%; 
+  }
+
+  .nav-links {
+    top: 17vh;
+    width: 60%;
+    height: 420px;
+    z-index: 3;
+    border-radius: 5px; 
+  }
+
+  button a{      
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+
+  button {
+    padding: 14px 12px 14px 14px;
+    font-size: 16px;
+  }
+
+  .wrapper {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin: 20px;
+  }
+
+  .nav-links li {
+    padding: 20px 30px;
+  }
+
+  .nav-links li a {
+    font-size: 16px;
+  }
+
+  .active {
+    background-color: #717171;
+    }
+    
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+
+  /* Top and Bottom borders come in */
+  /* stroke */
+  nav.stroke ul li a,
+  nav.fill ul li a {
+    position: relative;
+  }
+
+  nav.stroke ul li a,
+  nav.fill ul li a {
+    position: relative;
+  }
+  nav.stroke ul li a:after,
+  nav.fill ul li a:after {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #ffffff;
+    height: 2px;
+  }
+
+  nav.stroke ul li a:hover:after {
+    width: 100%;
+  }
+
+  .slideshow {
+    position: relative;
+    display: none;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    z-index: -2;
+  }
+
+  .skew-element {
+    width: 100%; 
+    height: 65px; 
+    position: relative; 
+    bottom: 60px;
+    z-index: 1;
+    background: #24252A;
+  } 
+
+
+  .skew-element-2 {
+    position: relative;
+    bottom: 55px;
+    height: 65px; 
+    background: #24252A;
+    /*transform: skew(0, -5deg);*/
+    z-index: 1;
+  } 
+
+  .skew-element-3 {
+    position: relative;
+    bottom: 90px;
+    height: 65px; 
+    background: #24252A;
+    /*transform: skew(0, -5deg);*/
+    z-index: 1;
+  } 
+
+  .skew-element-4 {
+    position: relative;
+    bottom: 95px;
+    height: 65px; 
+    background: #24252A;
+    /*transform: skew(0, -5deg);*/
+    z-index: 1;
+  } 
+
+  .skew-element-5 {
+    position: relative;
+    bottom: 95px;
+    height: 65px; 
+    background: #24252A;
+    /*transform: skew(0, -5deg);*/
+    z-index: 1;
+  } 
+
+  .about-section {
+    position: relative;
+    height: 510px;
+  }
+
+  .article-content {
+    position: relative;
+    left: 5%;
+    top: -500px;
+    width: 90%;
+    height: 150px;
+    font-size: 12px;
+  }
+
+  .figure-item-bg {
+    position: relative;
+    bottom: 60px;
+    opacity: 0.15;
+    width: 100%;
+    height: 490px;
+  }
+
+  .figure-item {
+    position: relative;
+    top: -525px;
+    left: 19%;
+    border-radius: 5px;
+    height: 250px;
+    width: 60%;
+    display: none;
+  }
+
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 100px;
+    right: 85%;
+    width: auto;
+    margin-top: -22px;
+    padding: 12px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: #24252A;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 7.5%;
+    top: 100px;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+
+  .prices {
+    position: relative;
+    bottom: 50px;
+    background-color: #f5f5f5;
+  }
+
+  .prices h2 {
+    text-align: center;
+    padding: 5px 0 5px 0;
+    font-size: 20px;
+  }
+
+  .prices ul li {
+    color: black;
+    padding: 0 10px 0 10px;
+    margin: 0 0 10px 0;
+    line-height: 1.6;
+    margin-left: 10px;
+    font-size: 11px;
+  }
+
+  .prices ul {
+    column-count: 2;
+    column-rule: dotted 1px #333;
+    list-style-type: none;
+    margin-top: 10px;
+    padding: 0 0 10px 10px;
+  }
+
+  .gallery, .thumbnail  {
+    width: 100%; 
+    height: 280px;
+  }
+
+  .thumbnail {
+    height: 60px;
+  }
+
+  .tour-section {
+    position: relative;
+    bottom: 90px;
+  }
+
+  .slides {
+    display: none;
+    margin-bottom: -5px;
+  }
+
+  .cursor {
+    cursor: pointer;
+  } 
+
+  .prev-image,
+  .next-image {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 10px;
+    margin-top: -35px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .next-image {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev-image:hover,
+  .next-image:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .caption-container {
+    padding: 2px 16px;
+    text-align: center;
+    background-color: #222;
+    color: white;
+  }
+
+  .caption-container p {
+    font-size: 28px;
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /* Six columns side by side */
+  .column {
+    float: left;
+    width: 20%; 
+    /*adding more images divide how many image by 100 and that'll be the width*/
+  }
+
+  .fade-thumbnail {
+    opacity: 0.6;
+  }
+
+  .active, .fade-thumbnail:hover { 
+    opacity: 1;
+  }
+
+  /*form validation section*/
+  .form {
+    position: relative;
+    bottom: 100px;
+  }
+
+  h1 {   
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 35px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type=text], [type=number], [type=date], [type=time] select {
+    /*width: 50%;*/
+    margin: 30px, 0px, 30px, 0;
+    box-sizing: border-box;
+    }
+
+  .flex-center {
+    display: flex;
+    justify-content: center;
+  }
+
+  .name, .number, .date, .time, .text {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+  }
+
+  .name, .number, .text, .date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0 3px 0;
+    padding-bottom: 3px;
+  }
+
+
+  #name, #number, #date, #time, #text {
+    border: 1.25px solid black;
+
+    /*border: 3px solid #ba4a00;
+    outline: none;*/
+  }
+    
+  #name, #number, #text{
+    margin: 0 auto;
+    font-size: 15px;
+    width: 65%;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    border-radius: 5px;
+  }
+
+  #date, #time {
+    position: relative;
+    left: 17.25%;
+    padding: 5px;  
+    font-size: 13px;
+    border-radius: 5px;
+  }
+
+  #date {
+    width: 38%;
+  }
+
+  #time { 
+    width: 26%;
+  }
+    
+  .btn[type=button], .btn[type=submit] {
+    padding: 5px;
+    width: 26%;
+    margin-right: 10px;
+    margin-left:  10px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  #validation {
+  text-align: center;
+  }
+}
+
+/*iphone 5*/
+@media (min-width: 320px) and (max-width: 320px) {
+
+  .logo {
+    position: relative;
+    left: -5%;
+  }
+
+  .slideshow {
+    height: 420px;
+  }
+
+  .about-section {
+    position: relative;
+    height: 510px;
+  }
+  
+  .article-content {
+    position: relative;
+    left: 5%;
+    top: -500px;
+    width: 90%;
+    height: 150px;
+    font-size: 12px;
+  }
+  
+  .figure-item-bg {
+    position: relative;
+    bottom: 60px;
+    opacity: 0.15;
+    width: 100%;
+    height: 490px;
+  }
+  
+  .figure-item {
+    position: relative;
+    top: -525px;
+    left: 19%;
+
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 100px;
+    right: 85%;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 7.5%;
+    top: 100px;
+    border-radius: 3px 0 0 3px;
+  }
+
+  #date, #time {
+    position: relative;
+    left: 14%;
+    padding: 5px;  
+    border-radius: 5px;
+  }
+
+  #name, #number, #text{
+    margin: 0 auto;
+    width: 72%;
+  }
+
+  .name, .number, .text  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0 5px 0;  
+  }
+
+  .gallery {
+    height: 225px;
+  }
+
+  .thumbnail {
+    height: 50px;
+  }
+
+  textarea{
+    height: 50px;
+  }
+
+  #date {
+    width: 45%;
+  }
+
+  #time { 
+      width: 26%;
+  }
+      
+  .btn[type=button], .btn[type=submit] {
+    padding: 8px;
+    width: 30%;
+    margin-top: 20px;
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 540px) and (max-width: 540px) {
+  /*surface duo*/
+  .nav-links {
+    top: 16vh;
+    width: 50%;
+  }
+
+  .skew-element-3 {
+    bottom: 85px;
+  }  
+
+  .about-section {
+    position: relative;
+    height: 510px;
+  }
+
+  .article-content {
+    position: relative;
+    left: 10%;
+    top: -500px;
+    width: 80%;
+    height: 150px;
+    font-size: 12px;
+  }
+
+  .figure-item-bg {
+    position: relative;
+    bottom: 60px;
+    opacity: 0.15;
+    width: 100%;
+    height: 490px;
+  }
+
+  .figure-item {
+    position: relative;
+    width: 50%;
+    top: -525px;
+    left: 24%;
+
+  }
+
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 100px;
+    right: 80%;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 12.5%;
+    top: 100px;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .gallery, .thumbnail  {
+    height: 375px;
+  }
+
+  .thumbnail {
+    height: 80px;
+  }
+
+  .btn[type=button], .btn[type=submit] {
+    padding: 8px;
+    width: 26%;
+    font-size: 20px;
+  }
+}
+@media (min-width: 280px) and (max-width: 280px) {
+/*galaxy fold*/
+
+  .logo {
+    margin-left: -20px;
+  }
+  .slideshow {
+    height: 350px;
+  }
+
+  .nav-links liz:nth-child(3){
+    padding: 30px 0 30px 0;
+  }
+
+  .nav-links {
+    width: 60%;
+  }
+    
+  .skew-element-2 {
+    bottom: 45px;
+  } 
+
+  .about-section {
+    position: relative;
+    height: 500px;
+  }
+
+  .article-content {
+    position: relative;
+    left: 10%;
+    top: -500px;
+    width: 80%;
+    height: 150px;
+    font-size: 12px;
+  }
+
+  .figure-item-bg {
+    position: relative;
+    bottom: 60px;
+    opacity: 0.15;
+    width: 100%;
+    height: 490px;
+  }
+
+  .figure-item {
+    position: relative;
+    width: 65%;
+    top: -525px;
+    left: 17%;
+  }
+
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 100px;
+    padding: 8px;
+    right: 87.5%;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 5%;
+    top: 100px;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .prices ul  {
+    margin-right: 15px;
+  }
+
+  .gallery, .thumbnail  {
+    height: 220px;
+  }
+
+  .thumbnail {
+    height: 45px;
+  }
+
+  .skew-element-4 {
+    height: 60px;
+  } 
+
+  .btn[type=button], .btn[type=submit] {
+    padding: 8px;
+    margin-top: 15px;
+    width: 30%;
+    font-size: 18px;
+  }
+}
+/*
 @import url("/src/css/tablet.css") only screen and (max-width:1024px);
 @import url("/src/css/ipad.css") only screen and (min-width:768px) and (max-width:768px); 
 @import url("/src/css/mobile.css") only screen and (max-width:766px);
 @import url("/src/css/surfaceduo.css") only screen and (min-width: 540px) and (max-width: 540px);  
 @import url("/src/css/galaxyfold.css") only screen and (min-width: 280px) and (max-width: 280px);
 @import url("/src/css/iphone5.css") only screen and (min-width: 320px) and (max-width: 320px);
-
+*/
