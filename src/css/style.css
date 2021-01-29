@@ -502,6 +502,35 @@ input[type=text], [type=number], [type=date], [type=time] select {
 text-align: center;
 }
 
+#btn-scrolltop  {
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  z-index: 99;
+  scroll-behavior:smooth;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+}
+
+#btn-scrolltop span {
+  position: absolute;
+  top: -5px;
+  right: 7px;
+  font-size: 45px; 
+}
+
+#btn-scrolltop:hover {
+  background-color: rgb(102, 102, 102);
+}
+
+
 @media (max-width:1024px) {
   /*Tablets*/
   body {
@@ -904,6 +933,34 @@ text-align: center;
   #validation {
   text-align: center;
   }
+
+  #btn-scrolltop  {
+    display: none;
+    position: fixed;
+    bottom: 0px;
+    right: 20px;
+    z-index: 99;
+    scroll-behavior:smooth;
+    border: none;
+    outline: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+  }
+
+  #btn-scrolltop span {
+    position: absolute;
+    top: -1px;
+    right: 12px;
+    font-size: 55px; 
+  }
+  
+  #btn-scrolltop:hover {
+    background-color: rgb(102, 102, 102);
+  }
 }
 
 @media (min-width:768px) and (max-width:768px) {
@@ -1265,6 +1322,34 @@ text-align: center;
 
   #validation {
   text-align: center;
+  }
+
+  #btn-scrolltop  {
+    display: none;
+    position: fixed;
+    bottom: 0px;
+    right: 20px;
+    z-index: 99;
+    scroll-behavior:smooth;
+    border: none;
+    outline: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+  }
+
+  #btn-scrolltop span {
+    position: absolute;
+    top: -1px;
+    right: 9px;
+    font-size: 40px; 
+  }
+  
+  #btn-scrolltop:hover {
+    background-color: rgb(102, 102, 102);
   }
 }
 @media (max-width:766px) {
@@ -1674,6 +1759,34 @@ text-align: center;
 
   #validation {
   text-align: center;
+  }
+
+  #btn-scrolltop  {
+      display: none;
+      position: fixed;
+      bottom: 0px;
+      right: 20px;
+      z-index: 99;
+      scroll-behavior:smooth;
+      border: none;
+      outline: none;
+      background-color: black;
+      color: white;
+      cursor: pointer;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+    }
+
+    #btn-scrolltop span {
+      position: absolute;
+      top: -1px;
+      right: 6.5px;
+      font-size: 30px; 
+    }
+    
+    #btn-scrolltop:hover {
+      background-color: rgb(102, 102, 102);
   }
 }
 

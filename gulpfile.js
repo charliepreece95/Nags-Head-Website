@@ -3,6 +3,7 @@ const browserSync  = require('browser-sync').create();
 const autoprefixer = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
 const uglifyJS = require('gulp-uglify');
+const terser = require("gulp-terser");
 const pipeline = require('readable-stream').pipeline;
 const sass = require('gulp-sass');
 const css = require("gulp-css");
@@ -47,19 +48,21 @@ gulp.task('imagemin', (res) => {
         return res();
 });
 
-//minify/uglify JS
-gulp.task('minify', (res) => {
+//minify JS
+gulp.task('minify', () => {
+    return new Promise(function(resolve, reject) {
     gulp.src('src/js/*')
-    //.pipe(uglifyJS())
+    .pipe(terser())
     .pipe(gulp.dest('public/js')); 
-    return res();
-});
+    console.log("HTTP server has started");
+    resolve();
+})});
 
 //concat and uglify JS script files
 gulp.task('concat', (res) => {
     gulp.src('src/js/*')
     .pipe(concat('main.js'))
-    .pipe(uglifyJS())
+    .pipe(terser())
     .pipe(gulp.dest('public/js'));
     return res();
 });
@@ -67,10 +70,18 @@ gulp.task('concat', (res) => {
 //JS vendor files
 gulp.task('vendor', (res) => {
     gulp.src(['node_modules/jquery/dist/jquery.min.js', 'node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/popper.js/dist/umd/popper.min.js'])
-    .pipe(uglifyJS())
+    .pipe(terser())
     .pipe(gulp.dest('public/js/vendor'));
     return res();
 });
+
+//minify css
+gulp.task("css", (res) => {
+    gulp.src('src/css/*.css')
+    .pipe(minifyCSS())
+    .pipe(gulp.dest('public/css'));
+    return res();
+})
 
 //complile sass and minify CSS
 gulp.task('sass', (res) => {
@@ -89,13 +100,6 @@ gulp.task('sass', (res) => {
     return res();
 });
 
-gulp.task("css", (res) => {
-    gulp.src('src/css/*.css')
-    .pipe(css())
-    .pipe(gulp.dest('public/css'));
-    return res();
-})
-
 //minify main fonts 
 gulp.task('fonts', (res) => {
     gulp.src("node_modules/font-awesome/scss/font-awesome.scss")
@@ -104,7 +108,7 @@ gulp.task('fonts', (res) => {
         browsers: ['last 2 versions'],
         cascade: false
     }))
-.pipe(minifyCSS({debug: true /*compatibility: 'ie8'*/}, (details) => {
+    .pipe(minifyCSS({debug: true /*compatibility: 'ie8'*/}, (details) => {
         console.log(`${details.name}: ${details.stats.originalSize}`);
         console.log(`${details.name}: ${details.stats.minifiedSize}`);
       }))

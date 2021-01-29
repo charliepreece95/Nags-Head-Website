@@ -127,3 +127,24 @@ const currentSlideImage = (n) => {
 }
 
 showSlideShow(slideThumbnailIndex);
+
+const scrollToTop = () => {
+  let btnScrollToTop = document.getElementById("btn-scrolltop");
+  window.onscroll = () => {
+    //When user scrolls 100px from top, show button
+    scrollFunction();
+  }
+  const scrollFunction = () => {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      btnScrollToTop.style.display = "block";
+    } else {
+      btnScrollToTop.style.display = "none";
+    }
+  }
+  //click event to smooth scroll to top of page
+  btnScrollToTop.addEventListener("click", () => {
+    document.documentElement.scrollTo({top: 0, behavior: 'smooth'});
+  });
+}
+
+scrollToTop();

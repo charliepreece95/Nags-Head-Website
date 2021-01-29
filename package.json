@@ -20,16 +20,17 @@
     "gulp-fontmin": "^0.7.4",
     "gulp-imagemin": "^5.0.3",
     "gulp-sass": "^4.0.2",
+    "gulp-terser": "^2.0.1",
     "gulp-uglify": "^3.0.2",
     "readable-stream": "^3.6.0"
   },
   "dependencies": {
-    "bootstrap": "^4.3.1",
-    "browser-sync": "^2.26.5",
+    "bootstrap": "^4.6.0",
+    "browser-sync": "^2.26.14",
     "font-awesome": "^4.7.0",
     "jquery": "^3.4.0",
     "nodemon": "^1.19.0",
     "popper.js": "^1.15.0",
-    "sass": "^1.19.0"
+    "sass": "^1.32.5"
   }
 }
