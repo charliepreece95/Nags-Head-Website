@@ -1,11 +1,10 @@
-//const { reset } = require("browser-sync");
-
 //Nav slider for mobile and tablet  
 const navSlider = () => {
     const toggle = document.querySelector(".toggle");
     const nav = document.querySelector(".nav-links");
-    const LgScreen = window.matchMedia("(min-width: 1024px)");
-  
+    const LgScreen = window.matchMedia("(min-width: 1025px)");
+    const smScreen = window.matchMedia("(max-width: 1025px)");
+
     //toggle nav
     toggle.addEventListener("click", () => {
       //toggle animation 
@@ -18,35 +17,21 @@ const navSlider = () => {
     //override toggle to display nav as flex on desktop when resized.
     window.addEventListener("resize", () => {
       if(LgScreen.matches) {
-        nav.style.display = "flex";
-      } else {
+        nav.style.display = "flex";      
+      }else if(toggle.classList.contains("open")) {
+        toggle.classList.toggle("open");
+        nav.style.display = "none";
+      }else if(smScreen.matches) {
         nav.style.display = "none";
       }
-  });
-};
+    }
+  );      
+}
 
+//Call Function
 navSlider();
-/*
-const resize = () => {
-  window.addEventListener("resize", () => {
-  const file = location.pathname.split( "./css" ).pop();
-  const x = window.watchMedia("(min-width: 320px) and (max-width: 320px)");
-  if(x.matches) {
-    const link = document.createElement( "link" );
-    link.href = file.substr( 0, file.lastIndexOf(".") ) + ".css";
-    link.type = "text/css";
-    link.rel = "stylesheet";
-    link.media = "screen,print";
-  }
- document.getElementsByTagName( "head" )[0].appendChild(link);
-});};
 
-resize();
-*/
-
-//New function
-
-//Automated slideshow of images spanning 3 seconds
+//Automated slideshow of images spanning 5 seconds
 let slideIndex = 0;
 
 const slideShow = () => {
@@ -60,9 +45,8 @@ const slideShow = () => {
     setTimeout(slideShow, 5000); // Change image every 5 seconds
 }
 
+//Call Function
 slideShow();
-
-//New function
 
 //Manual slideshow with toggle buttons
 let slideIndexNo = 1;
@@ -91,12 +75,11 @@ const plusSlides = (toggle) => {
     showSlides(slideIndexNo = toggle);
   }
 
+//Call Function
 showSlides(slideIndexNo);
 
-//New function
-
+//static slideshow and clickable thumbnails
 let slideThumbnailIndex = 1;
-
 
 const showSlideShow = (n) => {
   let i;
@@ -118,7 +101,7 @@ const showSlideShow = (n) => {
 
 // Next/previous controls
 const plusSlideImage = (n) => {
-  showSlideShow(slideThumbnailIndex += n);
+    showSlideShow(slideThumbnailIndex += n);
 }
 
 // Thumbnail image controls
@@ -126,8 +109,10 @@ const currentSlideImage = (n) => {
   showSlideShow(slideThumbnailIndex = n);
 }
 
+//Call function
 showSlideShow(slideThumbnailIndex);
 
+//ScrollTopTop function
 const scrollToTop = () => {
   let btnScrollToTop = document.getElementById("btn-scrolltop");
   window.onscroll = () => {
@@ -146,5 +131,24 @@ const scrollToTop = () => {
     document.documentElement.scrollTo({top: 0, behavior: 'smooth'});
   });
 }
-
+//Call function
 scrollToTop();
+
+//Open contact form
+const openForm = () => {
+  const toggle = document.querySelector(".toggle");
+  const smScreen = window.matchMedia("(max-width: 1024px)");
+  //Make contact form visable
+  document.querySelector(".contact-popup").style.display = "flex";
+    //close nav-links and reset toggle after opening form if width < 1024px
+    if(smScreen.matches) {
+      toggle.classList.toggle("open");
+      document.querySelector(".nav-links").style.display = "none";
+    }
+  }  
+//Close contact form
+const closeForm = () => {
+  //change display: flex to none and reset form fields
+  document.querySelector(".contact-popup").style.display = "none";
+  document.getElementById("reset").reset();
+}

@@ -101,7 +101,7 @@ header {
     top: 0px;
   }
   
-.toggle span:nth-child(2),.toggle span:nth-child(3) {
+.toggle span:nth-child(2), .toggle span:nth-child(3) {
   top: 18px;
 }
 
@@ -131,6 +131,7 @@ header {
 
 button {
   border: none;
+  cursor: pointer;
   color: white;
   padding: 12px 20px;
   margin-left: 35px;
@@ -141,13 +142,13 @@ button {
   background-color: rgba(0, 136, 169, 1);
   border-radius: 50px;
   transition: all 0.3s ease 0s;   
+  outline: none;
 }
 
 button:hover {
   background-color: rgba(0, 108, 134, 0.5);
   color: black;
 }
-
 
 /* Top and Bottom borders come in */
   /* stroke */
@@ -260,10 +261,10 @@ button:hover {
   right: 94%;
   width: auto;
   margin-top: -22px;
-  padding: 16px;
+  padding: 12px;
   color: white;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 32px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
@@ -498,6 +499,11 @@ input[type=text], [type=number], [type=date], [type=time] select {
     font-size: 25px;
 }
 
+.btn[type=button]:hover, .btn[type=submit]:hover{
+  background-color: #005469;
+  color: white;
+}
+
 #validation {
 text-align: center;
 }
@@ -530,6 +536,88 @@ text-align: center;
   background-color: rgb(102, 102, 102);
 }
 
+.contact-popup > form {
+  position: fixed;
+  border-radius: 5px;
+  border: 1px solid white;
+  padding: 20px 40px 0 40px;
+  z-index: 99;
+}
+
+.contact-popup {
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Add styles to the form container */
+.contact-container {
+  position: relative;
+  top: 180px;
+  max-width: 525px;
+  background-color: white;
+}
+
+.contact-container > h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 35px;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+/* Full-width input fields */
+.contact-container input[type=text], .contact-container input[type=email], .contact-text {
+  width: 100%;
+  height: 60px;
+  padding: 15px;
+  margin: 8px 0 25px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 22px;
+  background: #f1f1f1;
+}
+/*
+.contact-container label[for="name"], label[for="email"], label[for="textarea"] {
+  font-size: 18px;
+}
+*/
+.contact-container > .contact-text {
+  height: 140px;
+}
+
+.contact-container > .btn-contact-submit {
+  padding: 14px;
+  width: 38%;
+  margin-left: 140px;
+  margin-top: -5px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.btn-contact-submit:hover {
+  background-color: #005469;
+  color: white;
+}
+
+.close-contact {
+  position: absolute;
+  top: -25px;
+  display: block;
+  left: 0;
+  float: left;
+  color: #000;
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.close-contact:hover,
+.close-contact:focus {
+  color: #454545;
+  text-decoration: none;
+  cursor: pointer;
+  }
 
 @media (max-width:1024px) {
   /*Tablets*/
@@ -961,6 +1049,89 @@ text-align: center;
   #btn-scrolltop:hover {
     background-color: rgb(102, 102, 102);
   }
+
+  .contact-popup > form {
+    position: fixed;
+    border-radius: 8px;
+    border: 1px solid white;
+    padding: 20px 50px 0 50px;
+    z-index: 99;
+  }
+
+  .contact-popup {
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Add styles to the form container */
+  .contact-container {
+    position: relative;
+    top: 220px;
+    height: 750px;
+    max-width: 650px;
+    background-color: white;
+  }
+
+  .contact-container > h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 50px;
+    text-decoration: underline;
+    text-underline-offset: 0.175em;
+  }
+
+  /* Full-width input fields */
+  .contact-container input[type=text], .contact-container input[type=email], .contact-text {
+    width: 100%;
+    height: 90px;
+    padding: 15px;
+    margin: 8px 0 38px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 32px;
+    background: #f1f1f1;
+  }
+/*
+  .contact-container label[for="name"], label[for="email"], label[for="textarea"] {
+    font-size: 18px;
+  }
+*/
+  .contact-container > .contact-text {
+    height: 180px;
+  }
+
+  .contact-container > .btn-contact-submit {
+    padding: 20px;
+    width: 45%;
+    margin-left: 145px;
+    margin-top: -5px;
+    cursor: pointer;
+    font-size: 40px;
+  }
+
+  .btn-contact-submit:hover {
+    background-color: #005469;
+    color: white;
+  }
+
+  .close-contact {
+    position: absolute;
+    top: -30px;
+    display: block;
+    left: 0;
+    float: left;
+    color: #000;
+    font-size: 90px;
+    font-weight: bold;
+  }
+  
+  .close-contact:hover,
+  .close-contact:focus {
+    color: #616161;
+    text-decoration: none;
+    cursor: pointer;
+  }
 }
 
 @media (min-width:768px) and (max-width:768px) {
@@ -1351,6 +1522,88 @@ text-align: center;
   #btn-scrolltop:hover {
     background-color: rgb(102, 102, 102);
   }
+  .contact-popup > form {
+    position: fixed;
+    border-radius: 8px;
+    border: 1px solid white;
+    padding: 10px 20px 0 20px;
+    z-index: 99;
+  }
+
+  .contact-popup {
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Add styles to the form container */
+  .contact-container {
+    position: relative;
+    height: 525px;
+    top: 200px;
+    max-width: 400px;
+    background-color: white;
+  }
+
+  .contact-container > h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 34px;
+    text-decoration: underline;
+    text-underline-offset: 0.175em;
+  }
+
+  /* Full-width input fields */
+  .contact-container input[type=text], .contact-container input[type=email], .contact-text {
+    width: 100%;
+    height: 65px;
+    padding: 15px;
+    margin: 8px 0 30px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 24px;
+    background: #f1f1f1;
+  }
+/*
+  .contact-container label[for="name"], label[for="email"], label[for="textarea"] {
+    font-size: 18px;
+  }
+*/
+  .contact-container > .contact-text {
+    height: 120px;
+  }
+
+  .contact-container > .btn-contact-submit {
+    padding: 10px;
+    width: 45%;
+    margin-left: 96px;
+    margin-top: -6px;
+    cursor: pointer;
+    font-size: 28px;
+  }
+
+  .btn-contact-submit:hover {
+    background-color: #005469;
+    color: white;
+  }
+
+  .close-contact {
+    position: absolute;
+    top: -20px;
+    display: block;
+    left: 0;
+    float: left;
+    color: #000;
+    font-size: 64px;
+    font-weight: bold;
+  }
+  
+  .close-contact:hover,
+  .close-contact:focus {
+    color: #616161;
+    text-decoration: none;
+    cursor: pointer;
+  }
 }
 @media (max-width:766px) {
   /*mobile*/
@@ -1459,7 +1712,7 @@ text-align: center;
 
   .skew-element-2 {
     position: relative;
-    bottom: 55px;
+    bottom: 60px;
     height: 65px; 
     background: #24252A;
     /*transform: skew(0, -5deg);*/
@@ -1557,8 +1810,9 @@ text-align: center;
 
   .prices {
     position: relative;
-    bottom: 50px;
-    background-color: #f5f5f5;
+    bottom: 60px;
+    height: 450px;
+    background-color: #f5f5f5;;
   }
 
   .prices h2 {
@@ -1764,7 +2018,7 @@ text-align: center;
   #btn-scrolltop  {
       display: none;
       position: fixed;
-      bottom: 0px;
+      bottom: -30px;
       right: 20px;
       z-index: 99;
       scroll-behavior:smooth;
@@ -1788,6 +2042,87 @@ text-align: center;
     #btn-scrolltop:hover {
       background-color: rgb(102, 102, 102);
   }
+
+  .contact-popup > form {
+    position: fixed;
+    border-radius: 8px;
+    border: 1px solid white;
+    padding: 10px 20px 0 20px;
+    z-index: 99;
+  }
+
+  .contact-popup {
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Add styles to the form container */
+  .contact-container {
+    position: relative;
+    top: 150px;
+    height: 410px;
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+  }
+
+  .contact-container > h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 27px;
+    text-decoration: underline;
+    text-underline-offset: 0.125em;
+  }
+
+  /* Full-width input fields */
+  .contact-container input[type=text], .contact-container input[type=email], .contact-text {
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+    background: #f1f1f1;
+  }
+
+  .contact-container > .contact-text {
+    height: 90px;
+  }
+
+  .contact-container > .btn-contact-submit {
+    padding: 10px;
+    width: 50%;
+    margin-left: 63px;
+    margin-top: -5px;
+    margin-bottom: 22px;
+    cursor: pointer;
+    font-size: 25px;
+  }
+
+  .btn-contact-submit:hover {
+    background-color: #005469;
+    color: white;
+  }
+
+  .close-contact {
+    position: absolute;
+    top: -15px;
+    display: block;
+    left: 0;
+    float: left;
+    color: #000;
+    font-size: 44px;
+    font-weight: bold;
+  }
+  
+  .close-contact:hover,
+  .close-contact:focus {
+    color: #616161;
+    text-decoration: none;
+    cursor: pointer;
+  }
 }
 
 /*iphone 5*/
@@ -1795,7 +2130,7 @@ text-align: center;
 
   .logo {
     position: relative;
-    left: -5%;
+    left: -10%;
   }
 
   .slideshow {
@@ -1865,6 +2200,12 @@ text-align: center;
     margin: 10px 0 5px 0;  
   }
 
+  .prices {
+    margin-left: -5px;
+    bottom: 60px;
+    height: 510px;
+  }
+
   .gallery {
     height: 225px;
   }
@@ -1890,6 +2231,31 @@ text-align: center;
     width: 30%;
     margin-top: 20px;
     font-size: 18px;
+  }
+
+  .contact-container > .btn-contact-submit {
+    margin-left: 65px;
+  }
+
+  .contact-container {
+    position: relative;
+    top: 150px;
+    max-width: 280px;
+    height: 400px;
+  }
+
+  .contact-container input[type=text], .contact-container input[type=email], .contact-text {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+  }
+
+  .contact-container > .btn-contact-submit {
+    padding: 10px;
+    width: 48%;
+    margin-left: 60px;
+    margin-top: -5px;
+    font-size: 22px;
   }
 }
 
@@ -1931,7 +2297,6 @@ text-align: center;
     width: 50%;
     top: -525px;
     left: 24%;
-
   }
 
   /* Next & previous buttons */
@@ -1953,6 +2318,18 @@ text-align: center;
     height: 375px;
   }
 
+  .prices {
+    margin-left: -5px;
+    bottom: 60px;
+    height: 460px;
+    width: 100%; 
+  }
+
+  .prices ul li {
+    margin-left: 40px;
+  }
+
+
   .thumbnail {
     height: 80px;
   }
@@ -1961,6 +2338,21 @@ text-align: center;
     padding: 8px;
     width: 26%;
     font-size: 20px;
+  }
+
+  .contact-container > .btn-contact-submit {
+    margin-left: 90px;
+  }
+
+  .contact-container {
+    position: relative;
+    top: 150px;
+    max-width: 360px;
+    height: 400px;
+  }
+
+  .contact-container > .btn-contact-submit {
+    margin-left: 75px;
   }
 }
 @media (min-width: 280px) and (max-width: 280px) {
@@ -2030,6 +2422,12 @@ text-align: center;
     border-radius: 3px 0 0 3px;
   }
 
+  .prices {
+    bottom: 60px;
+    height: 635px;
+    width: 100%; 
+  }
+
   .prices ul  {
     margin-right: 15px;
   }
@@ -2046,13 +2444,44 @@ text-align: center;
     height: 60px;
   } 
 
+  .skew-element-2 {
+    bottom: 60px;
+  } 
+
   .btn[type=button], .btn[type=submit] {
     padding: 8px;
     margin-top: 15px;
     width: 30%;
     font-size: 18px;
   }
+
+  .contact-container > .btn-contact-submit {
+    margin-left: 52.5px;
+    padding: 10px;
+    width: 50%;
+  }
+
+  .contact-container {
+    position: relative;
+    top: 150px;
+    max-width: 260px;
+    height: 370px;
+  }
+
+  .contact-container input[type=text], .contact-container input[type=email], .contact-text {
+    width: 100%;
+    height: 45px;
+    margin: 8px 0 15px 0;
+    font-size: 16px;
+  }
+
+  .contact-container > .btn-contact-submit {
+    width: 50%;
+    margin-left: 50px;
+    font-size: 20px;
+  }
 }
+
 /*
 @import url("/src/css/tablet.css") only screen and (max-width:1024px);
 @import url("/src/css/ipad.css") only screen and (min-width:768px) and (max-width:768px); 

@@ -13,14 +13,14 @@
     <header>
         <h1 class="logo"><a href="#">The Nags Head</a></h1>
         <nav class="stroke">
-             <ul class="nav-links">  
+             <ul class="nav-links" id="close-nav">  
                 <li class="item"><a href="#history">History</a></li> 
                 <li class="item"><a href="#price-list">Prices</a></li>
                 <li class="item"><a href="#tour">Tour</a></li>
                 <li class="item"><a href="#book">Book</a></li>
                 <div class="wrapper">
-                    <button type="button" class="btn-nav"><a href="#">Contact</a></button>
-                </div> 
+                    <button type="button" id="btn-nav" onclick="openForm();"><a>Contact</a></button>
+                </div>
                 </ul>
             <div class="toggle">
                 <span></span>
@@ -31,6 +31,20 @@
         </nav>
     </header>
     <main>
+        <div class="contact-popup">
+            <form method="POST" action="index.php" id="reset" class="contact-container">      
+                <a class="close-contact" onclick="closeForm();">&times;</a>
+                <h2>Contact Us</h2>
+                <label for="name"></label>
+                <input type="text" placeholder="Name" required>
+                <label for="email"></label>
+                <input type="email" placeholder="Email" required>
+                <label for="textarea"></label>
+                <!--<input type="text" placeholder="Your Message..." required>-->
+                <textarea class="contact-text" row="4" placeholder="Your Message..." required></textarea>
+                <button type="submit" class="btn-contact-submit">Submit</button>
+            </form>
+        </div>
         <section>
             <figure>
                 <img class="slideshow fade" src="media/images/nags_head_slideshow_1.jpg"
@@ -175,7 +189,7 @@
         <section class="form" id="book">
             <h1>Book a Table</h1>
             <!--Send data to DB-->
-            <form method="POST" action="index.php" id="resetForm" class="text-justify">
+            <form method="POST" action="index.php">
                 <!--Input data to DB-->
                 <p class="name">Name</p>
                     <input type="text" name="_name" id="name" class="form-control">
@@ -194,7 +208,7 @@
                 <!--Submit button to DB-->
                 <div class="flex-center">
                     <button type="submit" name="submit" class="btn" onclick='Submit()'>Submit</button>
-                    <button type="button" class="btn" onclick="Clear()">Clear</button>
+                    <button type="button" name="cancel" class="btn" onclick="Clear();">Clear</button>
                 </form>
          </section>
         <div class="skew-element-5"></div>

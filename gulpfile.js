@@ -8,6 +8,7 @@ const pipeline = require('readable-stream').pipeline;
 const sass = require('gulp-sass');
 const css = require("gulp-css");
 const concat = require('gulp-concat');
+const minifyHTML = require('gulp-htmlmin');
 const minifyCSS = require('gulp-clean-css');
 const fontmin = require('gulp-fontmin');
 const php_connect = require("gulp-connect-php");
@@ -29,6 +30,7 @@ gulp.task('message', (res) => {
 //copy all the html files
 gulp.task('copyhtml', (res) => {
     gulp.src('src/html/*.html')
+    .pipe(minifyHTML({ collapseWhitespace: true }))
     .pipe(gulp.dest('public/html'));
     return res();
 });
@@ -36,6 +38,7 @@ gulp.task('copyhtml', (res) => {
 //copy index html
 gulp.task('copyindex', (res) => {
     gulp.src('src/*.html')
+    .pipe(minifyHTML({ collapseWhitespace: true }))
     .pipe(gulp.dest('public'));
     return res();
 });
