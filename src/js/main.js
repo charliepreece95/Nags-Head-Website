@@ -23,9 +23,7 @@ const navSlider = () => {
         nav.style.display = "none";
       }else if(smScreen.matches) {
         nav.style.display = "none";
-      }
-    }
-  );      
+      }});      
 }
 
 //Call Function
@@ -140,15 +138,87 @@ const openForm = () => {
   const smScreen = window.matchMedia("(max-width: 1024px)");
   //Make contact form visable
   document.querySelector(".contact-popup").style.display = "flex";
+  document.querySelector("main").style.opacity = "0.5";
     //close nav-links and reset toggle after opening form if width < 1024px
     if(smScreen.matches) {
       toggle.classList.toggle("open");
       document.querySelector(".nav-links").style.display = "none";
     }
   }  
+
 //Close contact form
 const closeForm = () => {
   //change display: flex to none and reset form fields
-  document.querySelector(".contact-popup").style.display = "none";
-  document.getElementById("reset").reset();
+    document.querySelector(".contact-popup").style.display = "none";
+    document.querySelector("main").style.opacity = "1";
+    document.getElementById("reset").reset();
+}
+
+const Submit = () => {
+  //declare and get Id's from HTML 
+  let name = document.getElementById("name").value;
+  let number = document.getElementById("number").value;
+  let textarea = document.getElementById("text").value;
+  let date = document.getElementById("date").value;
+  let time = document.getElementById("time").value;
+  let dateTime = Date.parse(date + " " + time); //convert date, time strings to a Date format and parse to output in milliseconds
+  //new Date(date + " " + time); Gives a GMT date instead in milliseconds
+  //prevent cache
+  autocomplete = "off";
+//prevent form submitting with invalid data
+const noSubmit = () => {
+
+  let refuseSubmit = document.querySelector("form");
+
+  refuseSubmit.addEventListener("submit", event => {
+      event.preventDefault();
+      console.log("form not submitted");
+  });
+}
+  //name or number is blank
+  if(name === "" || number === "" || textarea === "" || date === "" || time === "") {
+         noSubmit();
+         document.getElementById("valid").innerHTML = "You must fill all fields \
+         before submitting";
+  }
+  //letters only
+  else if(!isNaN(name)) {
+          noSubmit(); 
+          document.getElementById("valid").innerHTML = "Numbers not allowed in \
+          the name field";
+  }
+  //only allows eleven digits
+  else if(number.length < 11 || number.length > 11) {  
+          noSubmit(); 
+          document.getElementById("valid").innerHTML = "Your number must be \
+          11 digits";
+  }
+  //date of booking has to be an hour ahead of time 
+  else if(dateTime - 3.6e+6 < Date.now()) {
+    noSubmit(); 
+    document.getElementById("valid").innerHTML = "Make sure you're booking \
+    a table in the future and at least an hour ahead of current time";
+}
+
+  //data is valid so is submitted
+  else {
+          //allow data to be submitted
+          let submit = document.querySelector("form");
+          //submit form click event 
+          submit.addEventListener("submit", event => { 
+          event.submit();
+          });
+          //refresh page after 3 seconds (doesn't work)
+          //setTimeout( function () { location.reload(false); }, 5000);
+          document.getElementById("valid").innerHTML = "Thank You " + "<strong>" + name.toUpperCase() + "<strong/>";
+          console.log("form submitted");
+  }
+}
+
+//reset book table form
+const Clear = () => {
+  document.getElementById("btn-cancel").addEventListener("click", () => {
+    document.getElementById("clear").reset();
+    document.getElementById("valid").innerHTML = "";
+  });
 }

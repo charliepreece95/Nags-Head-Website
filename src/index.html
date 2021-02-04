@@ -31,21 +31,21 @@
             </div>
         </nav>
     </header>
+    <div class="contact-popup">
+        <form method="POST" action="index.php" id="reset" class="contact-container">      
+            <a class="close-contact" onclick="closeForm();">&times;</a>
+            <h2>Contact Us</h2>
+            <label for="name"></label>
+            <input type="text" placeholder="Name" required>
+            <label for="email"></label>
+            <input type="email" placeholder="Email" required>
+            <label for="textarea"></label>
+            <!--<input type="text" placeholder="Your Message..." required>-->
+            <textarea class="contact-text" row="4" placeholder="Your Message..." required></textarea>
+            <button type="submit" class="btn-contact-submit">Submit</button>
+        </form>
+    </div>
     <main>
-        <div class="contact-popup">
-            <form method="POST" action="index.php" id="reset" class="contact-container">      
-                <a class="close-contact" onclick="closeForm();">&times;</a>
-                <h2>Contact Us</h2>
-                <label for="name"></label>
-                <input type="text" placeholder="Name" required>
-                <label for="email"></label>
-                <input type="email" placeholder="Email" required>
-                <label for="textarea"></label>
-                <!--<input type="text" placeholder="Your Message..." required>-->
-                <textarea class="contact-text" row="4" placeholder="Your Message..." required></textarea>
-                <button type="submit" class="btn-contact-submit">Submit</button>
-            </form>
-        </div>
         <section>
             <figure>
                 <img class="slideshow fade" src="media/images/nags_head_slideshow_1.jpg"
@@ -187,10 +187,10 @@
             </aside>
         </section>
         <div class="skew-element-4"></div>
-        <section class="form" id="book">
+        <section class="form">
             <h1>Book a Table</h1>
             <!--Send data to DB-->
-            <form method="POST" action="index.php">
+            <form method="POST" action="#" id="clear">
                 <!--Input data to DB-->
                 <p class="name">Name</p>
                     <input type="text" name="_name" id="name" class="form-control">
@@ -202,21 +202,23 @@
                     <input type="date" name="_date" id="date" class="form-control">
                 <!--<p class="time">Time</p>-->
                     <input type="time" name="_time" id="time" class="form-control">
-                <!--Validation-->
-                <div id="validation" class="form-text text-muted">
-                    <p id="valid"></p>
-                </div>
                 <!--Submit button to DB-->
                 <div class="flex-center">
-                    <button type="submit" name="submit" class="btn" onclick='Submit()'>Submit</button>
-                    <button type="button" name="cancel" class="btn" onclick="Clear();">Clear</button>
-                </form>
+                    <!--change to submit-->
+                    <button type="button" name="submit" class="btn" onclick='Submit();'>Submit</button>
+                    <button type="button" name="cancel" id="btn-cancel" class="btn" onclick="Clear();">Clear</button>
+                </div>
+                <!--Validation-->
+                <div id="validation">
+                    <p id="valid"></p>
+                </div>  
+            </form>
          </section>
         <div class="skew-element-5"></div>
         <button id="btn-scrolltop"><span>&#11165;</span></button>
         </main>
     <footer>
-        <p>The Nags Head, Copyright &copy; 2020</p>
+        <p>The Nags Head &copy;2021</p>
     </footer>
 <script src="js/main.js"></script>
 </body>
