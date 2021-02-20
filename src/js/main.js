@@ -115,19 +115,16 @@ const scrollToTop = () => {
   let btnScrollToTop = document.getElementById("btn-scrolltop");
   window.onscroll = () => {
     //When user scrolls 100px from top, show button
-    scrollFunction();
-  }
-  const scrollFunction = () => {
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
       btnScrollToTop.style.display = "block";
     } else {
       btnScrollToTop.style.display = "none";
     }
-  }
   //click event to smooth scroll to top of page
   btnScrollToTop.addEventListener("click", () => {
     document.documentElement.scrollTo({top: 0, behavior: 'smooth'});
-  });
+    });
+  }
 }
 //Call function
 scrollToTop();
@@ -148,10 +145,13 @@ const openForm = () => {
 
 //Close contact form
 const closeForm = () => {
+  
+  document.getElementById("reset").addEventListener("click", () => {
   //change display: flex to none and reset form fields
     document.querySelector(".contact-popup").style.display = "none";
     document.querySelector("main").style.opacity = "1";
     document.getElementById("reset").reset();
+  });
 }
 
 const Submit = () => {
@@ -169,7 +169,7 @@ const Submit = () => {
 const noSubmit = () => {
 
   let refuseSubmit = document.querySelector("form");
-
+  //listen to see if user submits invalid data and prevent it
   refuseSubmit.addEventListener("submit", event => {
       event.preventDefault();
       console.log("form not submitted");
@@ -193,13 +193,12 @@ const noSubmit = () => {
           document.getElementById("valid").innerHTML = "Your number must be \
           11 digits";
   }
-  //date of booking has to be an hour ahead of time 
+  //date of booking has to be an hour ahead of time / 3.6e+6 equats to 1hr 
   else if(dateTime - 3.6e+6 < Date.now()) {
     noSubmit(); 
     document.getElementById("valid").innerHTML = "Make sure you're booking \
-    a table in the future and at least an hour ahead of current time";
-}
-
+    a table in the future and at least an hour ahead of time";
+  }
   //data is valid so is submitted
   else {
           //allow data to be submitted
@@ -208,8 +207,7 @@ const noSubmit = () => {
           submit.addEventListener("submit", event => { 
           event.submit();
           });
-          //refresh page after 3 seconds (doesn't work)
-          //setTimeout( function () { location.reload(false); }, 5000);
+          setTimeout( function () { location.reload(); }, 3000);
           document.getElementById("valid").innerHTML = "Thank You " + "<strong>" + name.toUpperCase() + "<strong/>";
           console.log("form submitted");
   }
