@@ -145,13 +145,10 @@ const openForm = () => {
 
 //Close contact form
 const closeForm = () => {
-  
-  document.getElementById("reset").addEventListener("click", () => {
-  //change display: flex to none and reset form fields
+    //change display: flex to none and reset form fields
     document.querySelector(".contact-popup").style.display = "none";
     document.querySelector("main").style.opacity = "1";
     document.getElementById("reset").reset();
-  });
 }
 
 const Submit = () => {
