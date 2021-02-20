@@ -539,12 +539,20 @@ input[type=text], [type=number], [type=date], [type=time] select {
   border-radius: 50%;
 }
 
-#btn-scrolltop span {
-  position: absolute;
-  top: -5px;
-  right: 7px;
-  font-size: 45px; 
+.arrow {
+  position: relative;
+  right: 5px;
+  top: 8px;
+  border: solid white;
+  border-width: 0 7px 7px 0;
+  display: inline-block;
+  padding: 10px;
 }
+
+.arrow, .up {
+  transform: rotate(-135deg);
+}
+
 
 #btn-scrolltop:hover {
   background-color: rgb(102, 102, 102);
@@ -1073,11 +1081,18 @@ input[type=text], [type=number], [type=date], [type=time] select {
     border-radius: 50%;
   }
 
-  #btn-scrolltop span {
-    position: absolute;
-    top: -1px;
-    right: 12px;
-    font-size: 55px; 
+  .arrow {
+    position: relative;
+    right: 6px;
+    top: 3px;
+    border: solid white;
+    border-width: 0 8px 8px 0;
+    display: inline-block;
+    padding: 14px;
+  }
+
+  .arrow, .up {
+    transform: rotate(-135deg);
   }
   
   #btn-scrolltop:hover {
@@ -1573,11 +1588,18 @@ input[type=text], [type=number], [type=date], [type=time] select {
     border-radius: 50%;
   }
 
-  #btn-scrolltop span {
-    position: absolute;
-    top: -1px;
-    right: 9px;
-    font-size: 40px; 
+  .arrow {
+    position: relative;
+    right: 3px;
+    top: 2px;
+    border: solid white;
+    border-width: 0 6px 6px 0;
+    display: inline-block;
+    padding: 10px;
+  }
+
+  .arrow, .up {
+    transform: rotate(-135deg);
   }
   
   #btn-scrolltop:hover {
@@ -2118,11 +2140,18 @@ input[type=text], [type=number], [type=date], [type=time] select {
       border-radius: 50%;
     }
 
-    #btn-scrolltop span {
-      position: absolute;
-      top: -1px;
-      right: 6.5px;
-      font-size: 30px; 
+    .arrow {
+      position: relative;
+      right: 3px;
+      top: 1px;
+      border: solid white;
+      border-width: 0 4px 4px 0;
+      display: inline-block;
+      padding: 7px;
+    }
+
+    .arrow, .up {
+      transform: rotate(-135deg);
     }
     
     #btn-scrolltop:hover {
