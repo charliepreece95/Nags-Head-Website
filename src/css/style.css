@@ -1037,6 +1037,7 @@ input[type=text], [type=number], [type=date], [type=time] select {
     padding: 15px;  
     font-size: 30px;
     border-radius: 8px;
+    background-color: white;
   }
 
   #date {
@@ -1544,6 +1545,7 @@ input[type=text], [type=number], [type=date], [type=time] select {
       padding: 8px;  
       font-size: 20px;
       border-radius: 8px;
+      background-color: white;
   }
 
   #date {
@@ -1814,7 +1816,6 @@ input[type=text], [type=number], [type=date], [type=time] select {
     background: #24252A;
   } 
 
-
   .skew-element-2 {
     position: relative;
     bottom: 60px;
@@ -1916,7 +1917,7 @@ input[type=text], [type=number], [type=date], [type=time] select {
   .prices {
     position: relative;
     bottom: 60px;
-    height: 450px;
+    height: 460px;
     background-color: #f5f5f5;;
   }
 
@@ -2073,9 +2074,6 @@ input[type=text], [type=number], [type=date], [type=time] select {
 
   #name, #number, #date, #time, #text {
     border: 1.25px solid black;
-
-    /*border: 3px solid #ba4a00;
-    outline: none;*/
   }
     
   #name, #number, #text{
@@ -2092,9 +2090,10 @@ input[type=text], [type=number], [type=date], [type=time] select {
   #date, #time {
     position: relative;
     left: 17.25%;
-    padding: 5px;  
+    padding: 5px; 
     font-size: 13px;
     border-radius: 5px;
+    background-color: white; 
   }
 
   #date {
@@ -2328,6 +2327,7 @@ input[type=text], [type=number], [type=date], [type=time] select {
     left: 14%;
     padding: 5px;  
     border-radius: 5px;
+    background-color: white;
   }
 
   #name, #number, #text{
