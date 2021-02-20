@@ -212,8 +212,6 @@ const noSubmit = () => {
 
 //reset book table form
 const Clear = () => {
-  document.getElementById("btn-cancel").addEventListener("click", () => {
     document.getElementById("clear").reset();
     document.getElementById("valid").innerHTML = "";
-  });
 }
