@@ -20,7 +20,7 @@
                 <li class="item"><a href="#tour">Tour</a></li>
                 <li class="item"><a href="#book">Book</a></li>
                 <div class="wrapper">
-                    <button type="button" id="btn-nav" onclick="openForm();"><a>Contact</a></button>
+                    <button type="button" id="btn-nav"><a>Contact</a></button>
                 </div>
                 </ul>
             <div class="toggle">
@@ -33,7 +33,7 @@
     </header>
     <div class="contact-popup">
         <form method="POST" action="index.php" id="reset" class="contact-container">      
-            <a class="close-contact" onclick="closeForm();">&times;</a>
+            <a class="close-contact" id="close">&times;</a>
             <h2>Contact Us</h2>
             <label for="name"></label>
             <input type="text" placeholder="Name" required>
@@ -205,8 +205,8 @@
                 <!--Submit button to DB-->
                 <div class="flex-center">
                     <!--change to submit-->
-                    <button type="button" name="submit" class="btn" onclick='Submit();'>Submit</button>
-                    <button type="button" name="cancel" id="btn-cancel" class="btn" onclick="Clear();">Clear</button>
+                    <button type="submit" name="submit" id="btn-submit" class="btn">Submit</button>
+                    <button type="button" name="cancel" id="btn-cancel" class="btn">Clear</button>
                 </div>
                 <!--Validation-->
                 <div id="validation">
