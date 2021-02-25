@@ -534,19 +534,19 @@ input[type=text], [type=number], [type=date], [type=time] select {
   background-color: black;
   color: white;
   cursor: pointer;
-  height: 55px;
-  width: 55px;
+  height: 45px;
+  width: 45px;
   border-radius: 50%;
 }
 
 .arrow {
   position: relative;
-  right: 5px;
-  top: 8px;
+  right: 8px;
+  top: 5px;
   border: solid white;
-  border-width: 0 7px 7px 0;
+  border-width: 0 6px 6px 0;
   display: inline-block;
-  padding: 10px;
+  padding: 8px;
 }
 
 .arrow, .up {
