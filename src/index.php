@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    <?php require "data.php"; ?>
     <header>
         <h1 class="logo">The Nags Head</h1>
         <nav class="stroke">
@@ -32,7 +33,7 @@
         </nav>
     </header>
     <div class="contact-popup">
-        <form method="POST" action="index.php" id="reset" class="contact-container">      
+        <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" id="reset" class="contact-container">      
             <a class="close-contact" id="close">&times;</a>
             <h2>Contact Us</h2>
             <label for="name"></label>
@@ -189,7 +190,7 @@
         <section class="form" id="book">
             <h1>Book a Table</h1>
             <!--Send data to DB-->
-            <form method="POST" action="#" id="clear">
+            <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" id="clear">
                 <!--Input data to DB-->
                 <p class="name">Name</p>
                     <input type="text" name="_name" id="name" class="form-control">

@@ -180,44 +180,43 @@ const Submit = () => {
   let textarea = document.getElementById("text").value;
   let date = document.getElementById("date").value;
   let time = document.getElementById("time").value;
-  let dateTime = Date.parse(date + " " + time); //convert date, time strings to a Date format and parse to output in milliseconds
-  //new Date(date + " " + time); Gives a GMT date instead in milliseconds
+  //let dateTime = Date.parse(date + " " + time); //convert date, time strings to a Date format and parse to output in milliseconds
+  let dateTime = new Date(date + " " + time).toLocaleString(); //Gives a GMT date instead in milliseconds
   //prevent cache
   autocomplete = "off";
+  //prevent default
+  event.preventDefault();
   //name or number is blank
   if(name === "" || number === "" || textarea === "" || date === "" || time === "") {
     document.getElementById("valid").innerHTML = "You must fill all fields \
     before submitting"; 
-    event.preventDefault();
   }
   //letters only
   else if(!isNaN(name)) {
     document.getElementById("valid").innerHTML = "Only letters are allowed \
     the name field";
-    event.preventDefault();
   }
   //only allows eleven digits
   else if(number.length < 11 || number.length > 11) { 
     document.getElementById("valid").innerHTML = "Your number must be \
     11 digits";
-    event.preventDefault();
   }
   //more than 10 character for textarea
   else if(textarea.length < 10) {
     document.getElementById("valid").innerHTML = "Add at least 10 characters to \
     your description of table / No of people";
-    event.preventDefault();
   }
   //date of booking has to be an hour ahead of time / 3.6e+6 equats to 1hr 
   else if(dateTime - 3.6e+6 < Date.now()) {
     document.getElementById("valid").innerHTML = "Make sure you're booking \
     a table in the future and at least an hour ahead of time";
-    event.preventDefault();
   }
   //data is valid so is submitted
   else {
     document.getElementById("valid").innerHTML = "Thank You " + "<strong>" + name.toUpperCase() + "<strong/>";
     console.log("form submitted");
+    console.log(dateTime);
+    console.log(typeof dateTime);
     setTimeout(() => { location.reload(); }, 3000);
   }
 });

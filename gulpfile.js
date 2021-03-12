@@ -2,9 +2,7 @@ const gulp = require('gulp');
 const browserSync  = require('browser-sync').create();
 const autoprefixer = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
-const uglifyJS = require('gulp-uglify');
 const terser = require("gulp-terser");
-const pipeline = require('readable-stream').pipeline;
 const sass = require('gulp-sass');
 const css = require("gulp-css");
 const concat = require('gulp-concat');
@@ -29,7 +27,7 @@ gulp.task('message', (res) => {
 
 //copy all the html files
 gulp.task('copyhtml', (res) => {
-    gulp.src('src/html/*.html')
+    gulp.src('src/html/*.php')
     .pipe(minifyHTML({ collapseWhitespace: true }))
     .pipe(gulp.dest('public/html'));
     return res();
@@ -37,7 +35,7 @@ gulp.task('copyhtml', (res) => {
 
 //copy index html
 gulp.task('copyindex', (res) => {
-    gulp.src('src/*.html')
+    gulp.src('src/*.php')
     .pipe(minifyHTML({ collapseWhitespace: true }))
     .pipe(gulp.dest('public'));
     return res();
@@ -55,7 +53,7 @@ gulp.task('imagemin', (res) => {
 gulp.task('minify', () => {
     return new Promise(function(resolve, reject) {
     gulp.src('src/js/*')
-    .pipe(terser())
+    //.pipe(terser())
     .pipe(gulp.dest('public/js')); 
     console.log("HTTP server has started");
     resolve();
@@ -139,10 +137,14 @@ gulp.task('fontmin', (res) => {
     return res();
 });
 
+gulp.task('connect_php', () => {
+    
+});
+
 //watch for changes
 gulp.task('watch', (res) => {
-    gulp.watch('src/html/*.html', gulp.series('copyhtml'));
-    gulp.watch('src/index.html', gulp.series('copyindex'));
+    gulp.watch('src/html/*.php', gulp.series('copyhtml'));
+    gulp.watch('src/*.php', gulp.series('copyindex'));
     gulp.watch('src/scss/*.scss', gulp.series('sass'));
     gulp.watch('src/css/*.css', gulp.series('css'));
     gulp.watch('src/js/*.js', gulp.series('minify'));
@@ -150,22 +152,32 @@ gulp.task('watch', (res) => {
     return res();
 });
 
-gulp.task('php', (res) => {
-    php_connect.server({base:'./public', port: 8010, keepalive: true});
-    return res();
-});
+/*
+
+To get php_connect to work with xampp, change the default root localhost page to your own site
+C:\xampp\apache\conf\extra\httpd-vhosts.conf
+<VirtualHost *:80>
+ 	ServerName  www.nagsheadshrewsbury.com/
+ 	ServerAlias nagsheadshrewsbury.com/
+ 	DocumentRoot C:\xampp\htdocs\Nags_Head_Website\public
+</VirtualHost>
+
+*/
 
 //Sync and refresh browser
-gulp.task('serve', (res) => {
-    browserSync.init({
-        injectChanges: true,
-        server: './public'
-    });
-    gulp.watch('src/index.html').on('change', browserSync.reload);
-    gulp.watch('src/html/*.html').on('change', browserSync.reload);
+gulp.task('serve', () => {
+    php_connect.server({}, () => {
+        browserSync.init({
+          injectChanges: true,
+          //server: './public',
+          proxy: 'localhost',
+          port: 3000
+        });
+      });
+    gulp.watch('src/*.php').on('change', browserSync.reload);
+    gulp.watch('src/html/*.php').on('change', browserSync.reload);
     gulp.watch('src/css/*.css').on('change', browserSync.reload);
     gulp.watch('src/js/*.js').on('change', browserSync.reload);
-    return res();
 });
 
 //Watch and serve

@@ -1,1 +1,237 @@
-const navSlider=()=>{let e=document.querySelector(".toggle"),t=document.querySelector(".nav-links"),n=window.matchMedia("(min-width: 1025px)"),l=window.matchMedia("(max-width: 1025px)");e.addEventListener("click",(()=>{e.classList.toggle("open")?t.style.display="flex":t.style.display="none"})),window.addEventListener("resize",(()=>{n.matches?t.style.display="flex":e.classList.contains("open")?(e.classList.toggle("open"),t.style.display="none"):l.matches&&(t.style.display="none")}))};navSlider();let slideIndex=0;const slideShow=()=>{let e=document.getElementsByClassName("slideshow");for(let t=0;t<e.length;t++)e[t].style.display="none";slideIndex++,slideIndex>e.length&&(slideIndex=1),e[slideIndex-1].style.display="block",setTimeout(slideShow,5e3)};slideShow();let slideIndexNo=1;const showSlides=e=>{let t=document.getElementsByClassName("figure-item"),n=document.getElementsByClassName("article-content");e>t.length&&e>n.length&&(slideIndexNo=1),e<1&&(slideIndexNo=t.length&&n.length);for(let e=0;e<t.length;e++){t[e].style.display="none";for(let e=0;e<n.length;e++)n[e].style.display="none"}t[slideIndexNo-1].style.display="block",n[slideIndexNo-1].style.display="block"},plusSlides=e=>{showSlides(slideIndexNo+=e)},currentSlide=e=>{showSlides(slideIndexNo=e)};showSlides(slideIndexNo);let slideThumbnailIndex=1;const showSlideShow=e=>{let t,n=document.getElementsByClassName("slides"),l=document.getElementsByClassName("thumbnail"),d=document.getElementById("caption");for(e>n.length&&(slideThumbnailIndex=1),e<1&&(slideThumbnailIndex=n.length),t=0;t<n.length;t++)n[t].style.display="none";for(t=0;t<l.length;t++)l[t].className=l[t].className.replace(" active","");n[slideThumbnailIndex-1].style.display="block",l[slideThumbnailIndex-1].className+=" active",d.innerHTML=l[slideThumbnailIndex-1].alt},plusSlideImage=e=>{showSlideShow(slideThumbnailIndex+=e)},currentSlideImage=e=>{showSlideShow(slideThumbnailIndex=e)};showSlideShow(slideThumbnailIndex);const scrollToTop=()=>{let e=document.getElementById("btn-scrolltop");window.onscroll=()=>{document.body.scrollTop>100||document.documentElement.scrollTop>100?e.style.display="block":e.style.display="none",e.addEventListener("click",(()=>{document.documentElement.scrollTo({top:0,behavior:"smooth"})}))}};scrollToTop();const openForm=()=>{let e=document.querySelector(".toggle"),t=window.matchMedia("(max-width: 1024px)");document.getElementById("btn-nav").addEventListener("click",(()=>{document.querySelector(".contact-popup").style.display="flex",document.querySelector("main").style.opacity="0.5",t.matches&&(e.classList.toggle("open"),document.querySelector(".nav-links").style.display="none")}))};openForm();const closeForm=()=>{document.getElementById("close").addEventListener("click",(()=>{document.querySelector(".contact-popup").style.display="none",document.querySelector("main").style.opacity="1",document.getElementById("reset").reset()}))};document.getElementById("close").addEventListener("click",(()=>{document.querySelector(".contact-popup").style.display="none",document.querySelector("main").style.opacity="1",document.getElementById("reset").reset()}));const Submit=()=>{document.getElementById("btn-submit").addEventListener("click",(e=>{let t=document.getElementById("name").value,n=document.getElementById("number").value,l=document.getElementById("text").value,d=document.getElementById("date").value,o=document.getElementById("time").value,s=Date.parse(d+" "+o);autocomplete="off",""===t||""===n||""===l||""===d||""===o?(document.getElementById("valid").innerHTML="You must fill all fields     before submitting",e.preventDefault()):isNaN(t)?n.length<11||n.length>11?(document.getElementById("valid").innerHTML="Your number must be     11 digits",e.preventDefault()):l.length<10?(document.getElementById("valid").innerHTML="Add at least 10 characters to     your description of table / No of people",e.preventDefault()):s-36e5<Date.now()?(document.getElementById("valid").innerHTML="Make sure you're booking     a table in the future and at least an hour ahead of time",e.preventDefault()):(document.getElementById("valid").innerHTML="Thank You <strong>"+t.toUpperCase()+"<strong/>",console.log("form submitted"),setTimeout((()=>{location.reload()}),3e3)):(document.getElementById("valid").innerHTML="Only letters are allowed     the name field",e.preventDefault())}))};document.getElementById("btn-submit").addEventListener("click",(e=>{let t=document.getElementById("name").value,n=document.getElementById("number").value,l=document.getElementById("text").value,d=document.getElementById("date").value,o=document.getElementById("time").value,s=Date.parse(d+" "+o);autocomplete="off",""===t||""===n||""===l||""===d||""===o?(document.getElementById("valid").innerHTML="You must fill all fields     before submitting",e.preventDefault()):isNaN(t)?n.length<11||n.length>11?(document.getElementById("valid").innerHTML="Your number must be     11 digits",e.preventDefault()):l.length<10?(document.getElementById("valid").innerHTML="Add at least 10 characters to     your description of table / No of people",e.preventDefault()):s-36e5<Date.now()?(document.getElementById("valid").innerHTML="Make sure you're booking     a table in the future and at least an hour ahead of time",e.preventDefault()):(document.getElementById("valid").innerHTML="Thank You <strong>"+t.toUpperCase()+"<strong/>",console.log("form submitted"),setTimeout((()=>{location.reload()}),3e3)):(document.getElementById("valid").innerHTML="Only letters are allowed     the name field",e.preventDefault())}));const Clear=()=>{document.getElementById("btn-cancel").addEventListener("click",(()=>{document.getElementById("clear").reset(),document.getElementById("valid").innerHTML=""}))};document.getElementById("btn-cancel").addEventListener("click",(()=>{document.getElementById("clear").reset(),document.getElementById("valid").innerHTML=""}));
+//Nav slider for mobile and tablet  
+const navSlider = () => {
+  let toggle = document.querySelector(".toggle");
+  let nav = document.querySelector(".nav-links");
+  let LgScreen = window.matchMedia("(min-width: 1025px)");
+  let smScreen = window.matchMedia("(max-width: 1025px)");
+
+  //toggle nav
+  toggle.addEventListener("click", () => {
+    //toggle animation 
+    if(toggle.classList.toggle("open")) {
+        nav.style.display = "flex";
+    }else {
+        nav.style.display = "none";
+    }
+  });
+  //override toggle to display nav as flex on desktop when resized.
+  window.addEventListener("resize", () => {
+    if(LgScreen.matches) {
+      nav.style.display = "flex";      
+    }else if(toggle.classList.contains("open")) {
+      toggle.classList.toggle("open");
+      nav.style.display = "none";
+    }else if(smScreen.matches) {
+      nav.style.display = "none";
+    }
+  });      
+}
+//Call Function
+navSlider();
+
+//Automated slideshow of images spanning 5 seconds
+let slideIndex = 0;
+
+const slideShow = () => {
+  let slides = document.getElementsByClassName("slideshow");
+  for(let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if(slideIndex > slides.length) {
+    slideIndex = 1
+  }    
+  slides[slideIndex-1].style.display = "block";  
+  setTimeout(slideShow, 5000); // Change image every 5 seconds
+}
+//Call Function
+slideShow();
+
+//Manual slideshow with toggle buttons
+let slideIndexNo = 1;
+
+const showSlides = (toggle) => {
+  let slides = document.getElementsByClassName("figure-item");
+  let content = document.getElementsByClassName("article-content");
+  if(toggle > slides.length && toggle > content.length) {
+    slideIndexNo = 1
+  }
+  if(toggle < 1) {
+    slideIndexNo = slides.length && content.length
+  } 
+  for(let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+      for (let j = 0; j < content.length; j++) {
+        content[j].style.display = "none";
+      }
+    }
+  slides[slideIndexNo-1].style.display = "block";
+  content[slideIndexNo-1].style.display = "block";
+}
+
+// Next/previous controls
+const plusSlides = (toggle) => {
+  showSlides(slideIndexNo += toggle);
+}
+
+// Thumbnail image controls
+const currentSlide = (toggle) => {
+  showSlides(slideIndexNo = toggle);
+}
+
+//Call Function
+showSlides(slideIndexNo);
+
+//static slideshow and clickable thumbnails
+let slideThumbnailIndex = 1;
+
+const showSlideShow = (n) => {
+  let i;
+  let slides = document.getElementsByClassName("slides");
+  let thumbnails = document.getElementsByClassName("thumbnail");
+  let captionText = document.getElementById("caption");
+  if(n > slides.length) {
+    slideThumbnailIndex = 1
+  }
+  if(n < 1) {
+    slideThumbnailIndex = slides.length
+  }
+  for(i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for(i = 0; i < thumbnails.length; i++) {
+    thumbnails[i].className = thumbnails[i].className.replace(" active", "");
+  }
+  slides[slideThumbnailIndex-1].style.display = "block";
+  thumbnails[slideThumbnailIndex-1].className += " active";
+  captionText.innerHTML = thumbnails[slideThumbnailIndex-1].alt;
+}
+
+// Next/previous controls
+const plusSlideImage = (n) => {
+    showSlideShow(slideThumbnailIndex += n);
+}
+
+// Thumbnail image controls
+const currentSlideImage = (n) => {
+  showSlideShow(slideThumbnailIndex = n);
+}
+
+//Call function
+showSlideShow(slideThumbnailIndex);
+
+//ScrollTopTop function
+const scrollToTop = () => {
+  let btnScrollToTop = document.getElementById("btn-scrolltop");
+  window.onscroll = () => {
+    //When user scrolls 100px from top, show button
+    if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      btnScrollToTop.style.display = "block";
+    }else {
+      btnScrollToTop.style.display = "none";
+    }
+  //click event to smooth scroll to top of page
+  btnScrollToTop.addEventListener("click", () => {
+    document.documentElement.scrollTo({top: 0, behavior: 'smooth'});
+    });
+  }
+}
+//Call function
+scrollToTop();
+
+//open contact form
+const openForm = () => {
+  let toggle = document.querySelector(".toggle");
+  let smScreen = window.matchMedia("(max-width: 1024px)");
+  let open = document.getElementById("btn-nav");
+  //Make contact form visable
+  open.addEventListener("click", () => {
+    document.querySelector(".contact-popup").style.display = "flex";
+    document.querySelector("main").style.opacity = "0.5";
+     //close nav-links and reset toggle after opening form if width < 1024px
+     if(smScreen.matches) {
+      toggle.classList.toggle("open");
+      document.querySelector(".nav-links").style.display = "none";
+    }
+  });
+}
+//call function  
+openForm();
+
+//Close contact form
+const closeForm = () => {
+  let close = document.getElementById("close");
+  //change display: flex to none and reset form fields
+  close.addEventListener("click", () => {
+    document.querySelector(".contact-popup").style.display = "none";
+    document.querySelector("main").style.opacity = "1";
+    document.getElementById("reset").reset();
+  });
+}
+//call function
+closeForm();
+
+const Submit = () => {
+  //declare and get Id's from HTML 
+  let submitBooking = document.getElementById("btn-submit");
+  submitBooking.addEventListener("click", event => {
+  let name = document.getElementById("name").value;
+  let number = document.getElementById("number").value;
+  let textarea = document.getElementById("text").value;
+  let date = document.getElementById("date").value;
+  let time = document.getElementById("time").value;
+  //let dateTime = Date.parse(date + " " + time); //convert date, time strings to a Date format and parse to output in milliseconds
+  let dateTime = new Date(date + " " + time).toLocaleString(); //Gives a GMT date instead in milliseconds
+  //prevent cache
+  autocomplete = "off";
+  //prevent default
+  event.preventDefault();
+  //name or number is blank
+  if(name === "" || number === "" || textarea === "" || date === "" || time === "") {
+    document.getElementById("valid").innerHTML = "You must fill all fields \
+    before submitting"; 
+  }
+  //letters only
+  else if(!isNaN(name)) {
+    document.getElementById("valid").innerHTML = "Only letters are allowed \
+    the name field";
+  }
+  //only allows eleven digits
+  else if(number.length < 11 || number.length > 11) { 
+    document.getElementById("valid").innerHTML = "Your number must be \
+    11 digits";
+  }
+  //more than 10 character for textarea
+  else if(textarea.length < 10) {
+    document.getElementById("valid").innerHTML = "Add at least 10 characters to \
+    your description of table / No of people";
+  }
+  //date of booking has to be an hour ahead of time / 3.6e+6 equats to 1hr 
+  else if(dateTime - 3.6e+6 < Date.now()) {
+    document.getElementById("valid").innerHTML = "Make sure you're booking \
+    a table in the future and at least an hour ahead of time";
+  }
+  //data is valid so is submitted
+  else {
+    document.getElementById("valid").innerHTML = "Thank You " + "<strong>" + name.toUpperCase() + "<strong/>";
+    console.log("form submitted");
+    console.log(dateTime);
+    console.log(typeof dateTime);
+    setTimeout(() => { location.reload(); }, 3000);
+  }
+});
+}
+//call function
+Submit();
+
+//reset book table form
+const Clear = () => {
+  let cancel = document.getElementById("btn-cancel");
+  //clears form data and validation text
+  cancel.addEventListener("click", () => {
+    document.getElementById("clear").reset();
+    document.getElementById("valid").innerHTML = "";
+  });
+}
+//call function
+Clear();
